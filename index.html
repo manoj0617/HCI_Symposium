@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HCIPAI Symposium 2027 · March 18–19 · GCET, Hyderabad</title>
+  <meta name="description" content="HCIPAI Symposium 2027 — HCI for Interactive & Immersive Experience. Panel discussions, workshops and interactive zones. March 18–19, 2027 at GCET, Hyderabad.">
+  <meta property="og:title" content="HCIPAI Symposium 2027">
+  <meta property="og:description" content="HCI for Interactive & Immersive Experience · March 18–19, 2027 · GCET, Hyderabad">
+  <meta property="og:image" content="assets/images/banner-draft.jpg">
+  <meta name="theme-color" content="#5b3a5e">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant:wght@500;600;700&family=DM+Sans:wght@400;500;600;700&family=Unbounded:wght@700;800&display=swap">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="home">
+  <main id="main">
+
+    <!-- Hero: banner placeholder (TODO: final HD banner + a mobile crop) -->
+    <section class="hero container" aria-label="HCIPAI Symposium 2027">
+      <div class="hero__banner">
+        <picture>
+          <!-- TODO: <source media="(max-width: 640px)" srcset="assets/images/banner-mobile.jpg"> -->
+          <img src="assets/images/banner-draft.jpg" width="1600" height="560"
+               alt="HCIPAI Symposium 2027, March 18–19. HCI for Interactive & Immersive Experience. One Experience. Many Perspectives. Panel discussions, Workshops, Interactive Zones.">
+        </picture>
+      </div>
+      <div class="hero__bar">
+        <p class="hero__facts">
+          <span>March 18–19, 2027</span>
+          <span>GCET, Hyderabad</span>
+          <span>2 days · In person</span>
+        </p>
+        <div class="hero__actions">
+          <a class="btn btn--primary" href="#" data-register>Register Now</a>
+          <a class="btn btn--outline" href="#schedule-section">View Schedule</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- What to expect -->
+    <section class="section" aria-labelledby="expect-title">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">One experience. Many perspectives.</p>
+          <h2 class="section-title" id="expect-title">HCI for Interactive &amp; Immersive Experience</h2>
+          <div class="ornament" aria-hidden="true"></div>
+        </div>
+        <div class="highlights">
+          <article class="highlight">
+            <p class="highlight__num">01</p>
+            <h3>Panel Discussions</h3>
+            <p>Researchers, designers and industry leaders debate where interaction design is heading.</p>
+          </article>
+          <article class="highlight">
+            <p class="highlight__num">02</p>
+            <h3>Workshops</h3>
+            <p>Hands-on sessions led by practitioners, from research methods to immersive prototyping.</p>
+          </article>
+          <article class="highlight">
+            <p class="highlight__num">03</p>
+            <h3>Interactive Zones</h3>
+            <p>Try out AR/VR, tangible and AI-driven experiences built by students and start-ups.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Passes: rendered from SITE.pricing in js/data.js -->
+    <section class="section section--tint" id="passes" aria-labelledby="passes-title">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Registration</p>
+          <h2 class="section-title" id="passes-title">Choose your pass</h2>
+          <div class="ornament" aria-hidden="true"></div>
+        </div>
+        <div class="pricing-grid" id="pricing-cards"></div>
+        <p class="pricing-note" id="pricing-note"></p>
+      </div>
+    </section>
+
+    <!-- Schedule: rendered from SITE.schedule -->
+    <section class="section" id="schedule-section" aria-labelledby="schedule-title">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Programme</p>
+          <h2 class="section-title" id="schedule-title">Event schedule</h2>
+          <p class="section-lead">Tentative — the final programme will be announced soon.</p>
+          <div class="ornament" aria-hidden="true"></div>
+        </div>
+        <div class="schedule" id="schedule"></div>
+      </div>
+    </section>
+
+    <!-- Speakers: rendered from SITE.speakers -->
+    <section class="section section--tint" id="speakers" aria-labelledby="speakers-title">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Voices of the symposium</p>
+          <h2 class="section-title" id="speakers-title">Speakers &amp; facilitators</h2>
+          <div class="ornament" aria-hidden="true"></div>
+        </div>
+        <div class="people-block">
+          <h3 class="section-title section-title--sm">Keynote Speakers</h3>
+          <div class="people-grid" id="keynote-speakers"></div>
+        </div>
+        <div class="people-block">
+          <h3 class="section-title section-title--sm">Workshop Facilitators</h3>
+          <div class="people-grid" id="workshop-facilitators"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Venue -->
+    <section class="section" id="venue" aria-labelledby="venue-title">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Venue</p>
+          <h2 class="section-title" id="venue-title">See you in Hyderabad</h2>
+          <div class="ornament" aria-hidden="true"></div>
+        </div>
+        <div class="venue">
+          <div class="venue__info">
+            <h3 data-venue-name>GCET</h3>
+            <p data-venue-address></p>
+            <a class="btn btn--primary" href="#" data-register>Register Now</a>
+          </div>
+          <iframe class="venue__map" id="venue-map" title="Map showing the symposium venue" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="js/data.js"></script>
+  <script src="js/layout.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

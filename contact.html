@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact Us · HCIPAI Symposium 2027</title>
+  <meta name="description" content="Get in touch with the HCIPAI Symposium 2027 organisers.">
+  <meta name="theme-color" content="#5b3a5e">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant:wght@500;600;700&family=DM+Sans:wght@400;500;600;700&family=Unbounded:wght@700;800&display=swap">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="contact">
+  <main id="main">
+
+    <header class="page-head container">
+      <p class="eyebrow">Get in touch</p>
+      <h1>Contact Us</h1>
+      <p>Questions about registration, sessions or the venue? Reach out to the organising team.</p>
+      <div class="ornament" aria-hidden="true"></div>
+    </header>
+
+    <!-- Details come from SITE.contact / SITE.venue in js/data.js -->
+    <section class="section" style="padding-top:0" aria-label="Contact details">
+      <div class="container">
+        <div class="contact-grid">
+          <div class="contact-card">
+            <h2>Email</h2>
+            <a href="#" data-contact-email></a>
+          </div>
+          <div class="contact-card">
+            <h2>Phone</h2>
+            <p data-contact-phone></p>
+          </div>
+          <div class="contact-card">
+            <h2>Venue</h2>
+            <p data-venue-name></p>
+            <p data-venue-address></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="js/data.js"></script>
+  <script src="js/layout.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
