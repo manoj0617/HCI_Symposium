@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="220" height="220" viewBox="0 0 220 220">
+  <!-- Background texture echoing the banner's paisley print. Tiles seamlessly. -->
+  <defs>
+    <g id="p">
+      <path d="M0 40C-24 40-36 18-28 0-20-18 4-22 10-40 12-46 10-52 4-52 14-50 20-38 18-24 16-4 30 8 24 24 20 34 12 40 0 40Z"/>
+      <path d="M0 28C-14 28-22 14-16 2-10-8 4-12 8-24"/>
+      <path d="M-2 14c-6 0-8-8-2-10 5-2 8 3 5 6"/>
+    </g>
+    <g id="leaf"><path d="M0 0C6-6 14-6 18 0 14 6 6 6 0 0Z"/><path d="M-8 0H0"/></g>
+  </defs>
+  <g fill="none" stroke="#c9d5ee" stroke-width="1.3" stroke-linecap="round">
+    <use href="#p" transform="translate(58 62) rotate(-20)"/>
+    <use href="#p" transform="translate(166 160) rotate(160)"/>
+    <use href="#p" transform="translate(168 48) rotate(70) scale(.6)"/>
+    <use href="#p" transform="translate(52 172) rotate(-110) scale(.6)"/>
+    <path d="M100 110c18-14 22-34 44-40M120 110c-18 14-22 34-44 40"/>
+    <use href="#leaf" transform="translate(132 78) rotate(-30)"/>
+    <use href="#leaf" transform="translate(88 142) rotate(150)"/>
+    <use href="#leaf" transform="translate(104 98) rotate(-80) scale(.8)"/>
+    <use href="#leaf" transform="translate(-6 110) rotate(10) scale(.8)"/>
+    <use href="#leaf" transform="translate(214 110) rotate(10) scale(.8)"/>
+  </g>
+</svg>

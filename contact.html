@@ -3,37 +3,43 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Contact Us · HCIPAI Symposium 2027</title>
+  <title>Contact · HCIPAI Symposium 2027</title>
   <meta name="description" content="Get in touch with the HCIPAI Symposium 2027 organisers.">
-  <meta name="theme-color" content="#5b3a5e">
+  <meta name="theme-color" content="#6a4767">
+  <link rel="icon" href="assets/logos/hcipai.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant:wght@500;600;700&family=DM+Sans:wght@400;500;600;700&family=Unbounded:wght@700;800&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anybody:wdth,wght@50..150,100..900&family=DM+Sans:opsz,wght@9..40,400..700&family=Lancelot&family=League+Spartan:wght@500;700;800&family=Marcellus&display=swap">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body data-page="contact">
   <main id="main">
 
-    <header class="page-head container">
+    <header class="page-head">
       <p class="eyebrow">Get in touch</p>
-      <h1>Contact Us</h1>
-      <p>Questions about registration, sessions or the venue? Reach out to the organising team.</p>
-      <div class="ornament" aria-hidden="true"></div>
+      <h1 data-split>Contact us</h1>
+      <p data-reveal>Questions about passes, tracks or getting to the venue? Write to the XR Research Lab at GCET, the team running the symposium.</p>
+      <div class="page-head__kolam page-head__kolam--l" data-kolam aria-hidden="true"></div>
+      <div class="page-head__kolam page-head__kolam--r" data-kolam aria-hidden="true"></div>
     </header>
 
     <!-- Details come from SITE.contact / SITE.venue in js/data.js -->
-    <section class="section" style="padding-top:0" aria-label="Contact details">
-      <div class="container">
-        <div class="contact-grid">
-          <div class="contact-card">
+    <section class="section section--pattern" aria-label="Contact details">
+      <div class="wrap">
+        <div class="contact-grid" data-stagger>
+          <div class="contact-card glass" data-tilt>
             <h2>Email</h2>
             <a href="#" data-contact-email></a>
           </div>
-          <div class="contact-card">
+          <div class="contact-card glass" data-tilt>
+            <h2>Instagram</h2>
+            <a href="#" target="_blank" rel="noopener" data-contact-instagram></a>
+          </div>
+          <div class="contact-card glass" data-tilt>
             <h2>Phone</h2>
             <p data-contact-phone></p>
           </div>
-          <div class="contact-card">
+          <div class="contact-card glass" data-tilt>
             <h2>Venue</h2>
             <p data-venue-name></p>
             <p data-venue-address></p>
@@ -47,5 +53,8 @@
   <script src="js/data.js"></script>
   <script src="js/layout.js"></script>
   <script src="js/main.js"></script>
+  <script src="js/vendor/gsap.min.js"></script>
+  <script src="js/vendor/ScrollTrigger.min.js"></script>
+  <script src="js/motion.js"></script>
 </body>
 </html>

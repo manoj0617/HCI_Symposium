@@ -4,81 +4,88 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>About GCET · HCIPAI Symposium 2027</title>
-  <meta name="description" content="About the host institution of HCIPAI Symposium 2027 — GCET, Hyderabad.">
-  <meta name="theme-color" content="#5b3a5e">
+  <meta name="description" content="About the host institution of HCIPAI Symposium 2027: Geethanjali College of Engineering and Technology, Hyderabad.">
+  <meta name="theme-color" content="#6a4767">
+  <link rel="icon" href="assets/logos/hcipai.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant:wght@500;600;700&family=DM+Sans:wght@400;500;600;700&family=Unbounded:wght@700;800&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anybody:wdth,wght@50..150,100..900&family=DM+Sans:opsz,wght@9..40,400..700&family=Lancelot&family=League+Spartan:wght@500;700;800&family=Marcellus&display=swap">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body data-page="about-gcet">
   <main id="main">
 
-    <header class="page-head container">
+    <header class="page-head">
       <p class="eyebrow">Host institution</p>
-      <h1>About GCET</h1>
-      <p data-venue-name>Geethanjali College of Engineering and Technology</p>
-      <div class="ornament" aria-hidden="true"></div>
+      <h1 data-split>About GCET</h1>
+      <p data-reveal>Geethanjali College of Engineering and Technology, Cheeryal, Hyderabad.</p>
+      <div class="page-head__kolam page-head__kolam--l" data-kolam aria-hidden="true"></div>
+      <div class="page-head__kolam page-head__kolam--r" data-kolam aria-hidden="true"></div>
     </header>
 
-    <!-- Facts sourced from gcet.edu.in (see docs/gcet-info.md). TODO: organisers to confirm; HD campus photos needed. -->
-    <section class="section" style="padding-top:0" aria-labelledby="overview-title">
-      <div class="container split">
+    <!-- Facts sourced from gcet.edu.in (see docs/gcet-info.md). TODO: organisers to confirm. Campus photos from the "Block pictures" Drive folder, resized to 1600px. -->
+    <section class="section" aria-labelledby="overview-title">
+      <div class="wrap split">
         <div class="split__text">
-          <h2 class="section-title section-title--sm" id="overview-title">College overview</h2>
-          <p>Established in 2005, Geethanjali College of Engineering and Technology is an autonomous engineering college in Cheeryal, Hyderabad, affiliated to Jawaharlal Nehru Technological University Hyderabad (JNTUH). It is run by the Teja Educational Society as part of the Geethanjali Group of Institutions, and is accredited by NAAC with an A+ grade.</p>
-          <p>GCET offers B.Tech, M.Tech and MBA programmes across computer science (including AI &amp; ML, data science, cyber security and IoT), electronics, electrical, civil and mechanical engineering. Its education links coursework with interdisciplinary projects, industry interaction and entrepreneurship, guided by the motto <em>"Striving towards perfection."</em></p>
+          <p class="eyebrow">Overview</p>
+          <h2 class="title" id="overview-title" data-split>Where the symposium happens</h2>
+          <p data-reveal>Geethanjali College of Engineering and Technology opened in 2005 in Cheeryal, on the north-eastern edge of Hyderabad. It is an autonomous college affiliated to JNTU Hyderabad, run by the Teja Educational Society, and holds an A+ grade from NAAC.</p>
+          <p data-reveal>Students here study B.Tech, M.Tech and MBA programmes, with computer science branches in AI &amp; ML, data science, cyber security and IoT alongside electronics, electrical, civil and mechanical engineering. Project work, industry links and a campus incubation centre sit next to the classroom, under the college motto <em>"Striving towards perfection."</em></p>
         </div>
-        <div class="placeholder-img">Campus photo</div>
+
+        <div class="carousel" data-carousel data-reveal tabindex="0" role="region" aria-roledescription="carousel" aria-label="Campus photos">
+          <div class="carousel__track">
+          <div class="carousel__slide"><img src="assets/images/campus/01.jpg" alt="Main gate of Geethanjali College of Engineering and Technology" width="1600" height="1067"></div>
+          <div class="carousel__slide"><img src="assets/images/campus/02.jpg" alt="Palm-lined avenue leading through the campus" width="1600" height="1067" loading="lazy"></div>
+          <div class="carousel__slide"><img src="assets/images/campus/03.jpg" alt="Academic block entrance with its tall columns" width="1600" height="1067" loading="lazy"></div>
+          <div class="carousel__slide"><img src="assets/images/campus/04.jpg" alt="Academic block facing the sports court" width="1600" height="1067" loading="lazy"></div>
+          <div class="carousel__slide"><img src="assets/images/campus/05.jpg" alt="Block with landscaped gardens in front" width="1600" height="1067" loading="lazy"></div>
+          <div class="carousel__slide"><img src="assets/images/campus/06.jpg" alt="Open-air amphitheatre beside a teaching block" width="1600" height="1067" loading="lazy"></div>
+          <div class="carousel__slide"><img src="assets/images/campus/07.jpg" alt="Teaching block in afternoon light" width="1600" height="1067" loading="lazy"></div>
+          <div class="carousel__slide"><img src="assets/images/campus/08.jpg" alt="Long academic block behind a row of palms" width="1600" height="1067" loading="lazy"></div>
+          </div>
+          <div class="carousel__ui">
+            <button class="carousel__btn carousel__btn--prev" type="button" data-prev aria-label="Previous photo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+            <span class="carousel__count" data-count-label aria-hidden="true">01 / 08</span>
+            <button class="carousel__btn" type="button" data-next aria-label="Next photo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+          </div>
+          <p class="sr-only" aria-live="polite" data-live></p>
+        </div>
       </div>
     </section>
 
-    <section class="section section--tint" aria-labelledby="facts-title">
-      <div class="container">
-        <h2 class="sr-only" id="facts-title">GCET at a glance</h2>
-        <div class="stats">
-          <div class="stat"><p class="stat__value">2005</p><p class="stat__label">Established</p></div>
-          <div class="stat"><p class="stat__value">A+</p><p class="stat__label">NAAC grade (2022)</p></div>
-          <div class="stat"><p class="stat__value">Tier-1</p><p class="stat__label">NBA accreditation for CSE, ECE &amp; EEE (2025)</p></div>
-          <div class="stat"><p class="stat__value">2016</p><p class="stat__label">Autonomous since, with UGC 2(f) &amp; 12(b) status</p></div>
-          <div class="stat"><p class="stat__value">100+</p><p class="stat__label">Faculty with a Ph.D.</p></div>
-          <div class="stat"><p class="stat__value">1,450+</p><p class="stat__label">Placements in 2025</p></div>
+    <section class="section section--pattern" aria-labelledby="facts-title">
+      <div class="wrap">
+        <header class="head">
+          <p class="eyebrow">At a glance</p>
+          <h2 class="title" id="facts-title" data-split>GCET in numbers</h2>
+        </header>
+        <div class="stats" data-stagger>
+          <div class="stat glass"><p class="stat__value" data-count="2005">2005</p><p class="stat__label">Established</p></div>
+          <div class="stat glass"><p class="stat__value" data-rise>A+</p><p class="stat__label">NAAC grade (2022)</p></div>
+          <div class="stat glass"><p class="stat__value" data-rise>Tier-1</p><p class="stat__label">NBA accreditation for CSE, ECE &amp; EEE (2025)</p></div>
+          <div class="stat glass"><p class="stat__value" data-count="2016">2016</p><p class="stat__label">Autonomous, with UGC 2(f) &amp; 12(b) status</p></div>
+          <div class="stat glass"><p class="stat__value" data-count="100" data-suffix="+">100+</p><p class="stat__label">Faculty with a Ph.D.</p></div>
+          <div class="stat glass"><p class="stat__value" data-count="1450" data-suffix="+" data-group>1,450+</p><p class="stat__label">Placements in 2025</p></div>
         </div>
       </div>
     </section>
 
     <section class="section" aria-labelledby="achievements-title">
-      <div class="container">
-        <div class="section-head">
-          <h2 class="section-title" id="achievements-title">Major achievements</h2>
-          <div class="ornament" aria-hidden="true"></div>
-        </div>
-        <ul class="achievements">
-          <li>Ranked 77th among the top 175 engineering institutes by Times Engineering / I3RC (2024–25).</li>
-          <li>Ranked 6th in Telangana and 5th in the Category of Excellence by GHRDC (2024–25).</li>
-          <li>Ranked 25th among private engineering colleges in Telangana by The Week (2024–25).</li>
-          <li>Rated AAA+ among India's best engineering colleges by Careers360.</li>
-          <li>Recognised as an R&amp;D centre (SIRO) by DSIR, Government of India, in 2011.</li>
-          <li>Received the Engineering Educators of the Year award from Bradford University, UK and Education Matters in 2014.</li>
-          <li>Runs an AICTE IDEA Lab, an Institution's Innovation Council and an Incubation Centre, and has MoUs with the University of Illinois Springfield (USA) and Tech Mahindra.</li>
+      <div class="wrap">
+        <header class="head">
+          <p class="eyebrow">Recognition</p>
+          <h2 class="title" id="achievements-title" data-split>Major achievements</h2>
+        </header>
+        <ul class="achievements" data-stagger>
+          <li class="glass">77th among the top 175 engineering institutes, Times Engineering / I3RC (2024–25).</li>
+          <li class="glass">6th in Telangana and 5th in the Category of Excellence, GHRDC (2024–25).</li>
+          <li class="glass">25th among private engineering colleges in Telangana, The Week (2024–25).</li>
+          <li class="glass">AAA+ rating among India's engineering colleges, Careers360.</li>
+          <li class="glass">Recognised by DSIR, Government of India, as an R&amp;D centre (SIRO) since 2011.</li>
+          <li class="glass">Engineering Educators of the Year award from Bradford University, UK and Education Matters (2014).</li>
+          <li class="glass">Home to an AICTE IDEA Lab, an Institution's Innovation Council and an Incubation Centre, with MoUs including the University of Illinois Springfield (USA) and Tech Mahindra.</li>
         </ul>
-      </div>
-    </section>
-
-    <section class="section section--tint" aria-labelledby="campus-title">
-      <div class="container">
-        <div class="section-head">
-          <h2 class="section-title" id="campus-title">Campus</h2>
-          <div class="ornament" aria-hidden="true"></div>
-        </div>
-        <div class="gallery">
-          <div class="placeholder-img">Campus photo 1</div>
-          <div class="placeholder-img">Campus photo 2</div>
-          <div class="placeholder-img">Campus photo 3</div>
-          <div class="placeholder-img">Campus photo 4</div>
-          <div class="placeholder-img">Campus photo 5</div>
-          <div class="placeholder-img">Campus photo 6</div>
-        </div>
       </div>
     </section>
 
@@ -87,5 +94,8 @@
   <script src="js/data.js"></script>
   <script src="js/layout.js"></script>
   <script src="js/main.js"></script>
+  <script src="js/vendor/gsap.min.js"></script>
+  <script src="js/vendor/ScrollTrigger.min.js"></script>
+  <script src="js/motion.js"></script>
 </body>
 </html>
