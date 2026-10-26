@@ -97,7 +97,7 @@ const SITE = {
         { time: "12:30 – 1:30 PM", title: "Lunch", kind: "pause" },
         { time: "1:30 – 3:00 PM", title: "Workshop Session", kind: "split", a: "UI/UX & HCI", b: "VR & Immersive Technologies" },
         { time: "3:15 – 5:00 PM", title: "Workshop Session", kind: "split", a: "UI/UX & HCI", b: "VR & Immersive Technologies" },
-        // TODO: overlaps the 3:15–5:00 workshop in the organisers' sheet — confirm timing.
+        // Overlaps the 3:15–5:00 workshop on purpose (confirmed by organisers).
         { time: "4:00 – 5:30 PM", title: "Networking & Stall Exploration", topic: "Exhibition, demonstrations and informal conversations", kind: "expo" },
       ],
     },

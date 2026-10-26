@@ -61,7 +61,5 @@ assets/             Logos, skyline, paisley texture, draft banner
 - [ ] "Horizon" font file (banner's HCIPAI lettering) if it can be licensed for the web; Anybody is used meanwhile
 - [ ] Registration URL
 - [ ] What each pass includes
-- [ ] Day 1: networking (4:00–5:30) overlaps the 3:15–5:00 workshop in the sheet — confirm
 - [ ] Speakers, facilitators, committee names and photos
 - [ ] Contact phone; confirm venue address
-- [ ] NAAC badge: banner says "Accredited University"; site says "Accredited Institution" since GCET is a college
