@@ -3,129 +3,147 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>HCIPAI Symposium 2027 · March 18–19 · GCET, Hyderabad</title>
-  <meta name="description" content="HCIPAI Symposium 2027 — HCI for Interactive & Immersive Experience. Panel discussions, workshops and interactive zones. March 18–19, 2027 at GCET, Hyderabad.">
+  <title>HCIPAI Symposium 2027 · 18–19 March · GCET, Hyderabad</title>
+  <meta name="description" content="HCIPAI Symposium 2027: HCI for Interactive & Immersive Experience. Keynotes, two-track workshops and a project expo. 18–19 March 2027 at GCET, Hyderabad.">
   <meta property="og:title" content="HCIPAI Symposium 2027">
-  <meta property="og:description" content="HCI for Interactive & Immersive Experience · March 18–19, 2027 · GCET, Hyderabad">
+  <meta property="og:description" content="HCI for Interactive & Immersive Experience · 18–19 March 2027 · GCET, Hyderabad">
   <meta property="og:image" content="assets/images/banner-draft.jpg">
-  <meta name="theme-color" content="#5b3a5e">
+  <meta name="theme-color" content="#6a4767">
+  <link rel="icon" href="assets/logos/hcipai.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant:wght@500;600;700&family=DM+Sans:wght@400;500;600;700&family=Unbounded:wght@700;800&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anybody:wdth,wght@50..150,100..900&family=DM+Sans:opsz,wght@9..40,400..700&family=Lancelot&family=League+Spartan:wght@500;700;800&family=Marcellus&display=swap">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body data-page="home">
   <main id="main">
 
-    <!-- Hero: banner placeholder (TODO: final HD banner + a mobile crop) -->
-    <section class="hero container" aria-label="HCIPAI Symposium 2027">
-      <div class="hero__banner">
-        <picture>
-          <!-- TODO: <source media="(max-width: 640px)" srcset="assets/images/banner-mobile.jpg"> -->
-          <img src="assets/images/banner-draft.jpg" width="1600" height="560"
-               alt="HCIPAI Symposium 2027, March 18–19. HCI for Interactive & Immersive Experience. One Experience. Many Perspectives. Panel discussions, Workshops, Interactive Zones.">
-        </picture>
-      </div>
-      <div class="hero__bar">
-        <p class="hero__facts">
-          <span>March 18–19, 2027</span>
-          <span>GCET, Hyderabad</span>
-          <span>2 days · In person</span>
-        </p>
-        <div class="hero__actions">
-          <a class="btn btn--primary" href="#" data-register>Register Now</a>
-          <a class="btn btn--outline" href="#schedule-section">View Schedule</a>
-        </div>
-      </div>
-    </section>
+    <!-- ============ Hero: the Canva banner, rebuilt in live type ============ -->
+    <section class="hero" aria-labelledby="hero-title" data-hero>
+      <div class="hero__bg" data-depth="0.15" aria-hidden="true"></div>
+      <div class="hero__glow hero__glow--a" data-depth="0.4" aria-hidden="true"></div>
+      <div class="hero__glow hero__glow--b" data-depth="0.25" aria-hidden="true"></div>
 
-    <!-- What to expect -->
-    <section class="section" aria-labelledby="expect-title">
-      <div class="container">
-        <div class="section-head">
-          <p class="eyebrow">One experience. Many perspectives.</p>
-          <h2 class="section-title" id="expect-title">HCI for Interactive &amp; Immersive Experience</h2>
-          <div class="ornament" aria-hidden="true"></div>
-        </div>
-        <div class="highlights">
-          <article class="highlight">
-            <p class="highlight__num">01</p>
-            <h3>Panel Discussions</h3>
-            <p>Researchers, designers and industry leaders debate where interaction design is heading.</p>
-          </article>
-          <article class="highlight">
-            <p class="highlight__num">02</p>
-            <h3>Workshops</h3>
-            <p>Hands-on sessions led by practitioners, from research methods to immersive prototyping.</p>
-          </article>
-          <article class="highlight">
-            <p class="highlight__num">03</p>
-            <h3>Interactive Zones</h3>
-            <p>Try out AR/VR, tangible and AI-driven experiences built by students and start-ups.</p>
-          </article>
-        </div>
+      <div class="hero__badges wrap" data-hero-in>
+        <img src="assets/logos/gcet.png" alt="Geethanjali College of Engineering and Technology" width="72" height="74">
+        <img src="assets/logos/nba.png" alt="NBA — National Board of Accreditation" width="96" height="73">
+        <!-- NAAC badge set in type, as in the banner -->
+        <p class="naac"><span class="naac__name">NAAC</span><span class="naac__grade">GRADE <b>A+</b></span><span class="naac__sub">Accredited Institution</span></p>
       </div>
-    </section>
 
-    <!-- Passes: rendered from SITE.pricing in js/data.js -->
-    <section class="section section--tint" id="passes" aria-labelledby="passes-title">
-      <div class="container">
-        <div class="section-head">
-          <p class="eyebrow">Registration</p>
-          <h2 class="section-title" id="passes-title">Choose your pass</h2>
-          <div class="ornament" aria-hidden="true"></div>
-        </div>
-        <div class="pricing-grid" id="pricing-cards"></div>
-        <p class="pricing-note" id="pricing-note"></p>
-      </div>
-    </section>
+      <div class="hero__inner wrap">
+        <h1 class="lockup" id="hero-title" data-depth="0.6">
+          <span class="sr-only">HCIPAI Symposium 2027, 18–19 March</span>
+          <span class="lockup__year" aria-hidden="true"><span>2</span><span>0</span><span>2</span><span>7</span></span>
+          <span class="lockup__body" aria-hidden="true">
+            <span class="lockup__name"><span class="lockup__hci">HCI</span><span class="lockup__pai">PAI</span></span>
+            <span class="lockup__row">
+              <span class="lockup__date"><b>MARCH</b><span>18<sup>th</sup>–19<sup>th</sup></span></span>
+              <span class="lockup__sym">SYMP<span class="lockup__o" data-sparkle>O</span>SIUM</span>
+            </span>
+          </span>
+        </h1>
 
-    <!-- Schedule: rendered from SITE.schedule -->
-    <section class="section" id="schedule-section" aria-labelledby="schedule-title">
-      <div class="container">
-        <div class="section-head">
-          <p class="eyebrow">Programme</p>
-          <h2 class="section-title" id="schedule-title">Event schedule</h2>
-          <p class="section-lead">Tentative — the final programme will be announced soon.</p>
-          <div class="ornament" aria-hidden="true"></div>
-        </div>
-        <div class="schedule" id="schedule"></div>
-      </div>
-    </section>
-
-    <!-- Speakers: rendered from SITE.speakers -->
-    <section class="section section--tint" id="speakers" aria-labelledby="speakers-title">
-      <div class="container">
-        <div class="section-head">
-          <p class="eyebrow">Voices of the symposium</p>
-          <h2 class="section-title" id="speakers-title">Speakers &amp; facilitators</h2>
-          <div class="ornament" aria-hidden="true"></div>
-        </div>
-        <div class="people-block">
-          <h3 class="section-title section-title--sm">Keynote Speakers</h3>
-          <div class="people-grid" id="keynote-speakers"></div>
-        </div>
-        <div class="people-block">
-          <h3 class="section-title section-title--sm">Workshop Facilitators</h3>
-          <div class="people-grid" id="workshop-facilitators"></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Venue -->
-    <section class="section" id="venue" aria-labelledby="venue-title">
-      <div class="container">
-        <div class="section-head">
-          <p class="eyebrow">Venue</p>
-          <h2 class="section-title" id="venue-title">See you in Hyderabad</h2>
-          <div class="ornament" aria-hidden="true"></div>
-        </div>
-        <div class="venue">
-          <div class="venue__info">
-            <h3 data-venue-name>GCET</h3>
-            <p data-venue-address></p>
-            <a class="btn btn--primary" href="#" data-register>Register Now</a>
+        <div class="hero__aside" data-depth="0.35">
+          <p class="hero__tagline" data-hero-in>Hci For Interactive &amp; Immersive Experience</p>
+          <p class="hero__sub" data-hero-in>One Experience. Many perspectives.</p>
+          <p class="hero__formats" data-hero-in>Panel discussions <span aria-hidden="true">◆</span> Workshops <span aria-hidden="true">◆</span> Interactive Zones</p>
+          <div class="hero__actions" data-hero-in>
+            <a class="btn btn--primary btn--lg" href="#" data-register>Register now</a>
+            <a class="btn btn--glass btn--lg" href="#programme">See the programme</a>
           </div>
+          <p class="hero__chip glass" data-hero-in data-earlybird></p>
+        </div>
+      </div>
+
+      <img class="hero__skyline" src="assets/images/skyline.png" alt="" width="880" height="212" data-depth="0.2" aria-hidden="true">
+      <div class="hero__kolam hero__kolam--l" data-kolam aria-hidden="true"></div>
+      <div class="hero__kolam hero__kolam--r" data-kolam aria-hidden="true"></div>
+    </section>
+
+    <!-- ============ Marquee ============ -->
+    <div class="marquee" aria-hidden="true" data-marquee></div>
+
+    <!-- ============ Experiences ============ -->
+    <section class="section section--pattern" id="experiences" aria-labelledby="exp-title">
+      <div class="wrap">
+        <header class="head">
+          <p class="eyebrow">What’s on</p>
+          <h2 class="title" id="exp-title" data-split>Two days. Three ways in.</h2>
+        </header>
+        <div class="experiences" id="experiences-list" data-stagger></div>
+      </div>
+    </section>
+
+    <!-- ============ Tracks ============ -->
+    <section class="section" id="tracks" aria-labelledby="tracks-title">
+      <div class="wrap">
+        <header class="head head--split">
+          <div>
+            <p class="eyebrow">Workshops</p>
+            <h2 class="title" id="tracks-title" data-split>Pick your track</h2>
+          </div>
+          <p class="lead" data-reveal>Workshops run as two parallel tracks across both days and end in prototype demos on day two.</p>
+        </header>
+        <div class="tracks" id="tracks-list"></div>
+      </div>
+    </section>
+
+    <!-- ============ Passes ============ -->
+    <section class="section section--pattern" id="passes" aria-labelledby="passes-title">
+      <div class="wrap">
+        <header class="head">
+          <p class="eyebrow">Passes</p>
+          <h2 class="title" id="passes-title" data-split>Register early, pay less</h2>
+          <p class="lead" data-reveal data-earlybird-lead></p>
+        </header>
+        <div class="pricing" id="pricing-cards" data-stagger></div>
+        <p class="pricing__note" id="pricing-note" data-reveal></p>
+      </div>
+    </section>
+
+    <!-- ============ Programme roadmap ============ -->
+    <section class="section section--flush" id="programme" aria-labelledby="programme-title">
+      <div class="wrap">
+        <header class="head head--split">
+          <div>
+            <p class="eyebrow">Programme · tentative</p>
+            <h2 class="title" id="programme-title" data-split>The route through two days</h2>
+          </div>
+          <p class="lead" data-reveal>Follow the road from registration to the last demo. Where it splits, the two workshop tracks run side by side.</p>
+        </header>
+      </div>
+      <div class="roadmap" id="roadmap"></div>
+    </section>
+
+    <!-- ============ Speakers ============ -->
+    <section class="section section--pattern" id="speakers" aria-labelledby="speakers-title">
+      <div class="wrap">
+        <header class="head">
+          <p class="eyebrow">Speakers</p>
+          <h2 class="title" id="speakers-title" data-split>Who’s on stage</h2>
+          <p class="lead" data-reveal>Names are being confirmed. Each card shows the session it belongs to.</p>
+        </header>
+        <div class="people people--speakers" id="keynote-speakers" data-stagger></div>
+        <h3 class="subhead" data-reveal>Workshop facilitators</h3>
+        <div class="people people--speakers" id="workshop-facilitators" data-stagger></div>
+      </div>
+    </section>
+
+    <!-- ============ Venue ============ -->
+    <section class="section venue-section" id="venue" aria-labelledby="venue-title">
+      <div class="wrap venue">
+        <div class="venue__info" data-reveal>
+          <p class="eyebrow">Venue</p>
+          <h2 class="title" id="venue-title">Meet us in Hyderabad</h2>
+          <p class="venue__name" data-venue-name></p>
+          <p class="venue__address" data-venue-address></p>
+          <div class="venue__actions">
+            <a class="btn btn--primary" href="#" data-register>Register now</a>
+            <a class="btn btn--glass" href="#" id="directions" target="_blank" rel="noopener">Get directions</a>
+          </div>
+        </div>
+        <div class="venue__map-wrap" data-reveal>
           <iframe class="venue__map" id="venue-map" title="Map showing the symposium venue" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
       </div>
@@ -136,5 +154,8 @@
   <script src="js/data.js"></script>
   <script src="js/layout.js"></script>
   <script src="js/main.js"></script>
+  <script src="js/vendor/gsap.min.js"></script>
+  <script src="js/vendor/ScrollTrigger.min.js"></script>
+  <script src="js/motion.js"></script>
 </body>
 </html>
