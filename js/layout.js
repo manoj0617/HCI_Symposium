@@ -3,34 +3,8 @@
  * are edited in one place. Each page marks itself with <body data-page="...">.
  */
 const ART = (function () {
-  /* Kolam corner, redrawn from the banner as vector so it stays sharp at any size.
-     Each loop is a rounded diamond around a grid point; neighbouring loops overlap,
-     which gives the interlaced kolam look. Paths use pathLength=1 so they can be
-     "drawn" with stroke-dashoffset. */
-  function kolam(extraClass = "") {
-    const s = 44; // grid step
-    const pad = 34;
-    const n = 4; // rows/cols along each arm
-    const size = pad * 2 + s * n;
-    const w = s * 1.02; // loop width before rotation
-    let loops = "";
-    let dots = "";
-    for (let i = 0; i <= n; i++) {
-      for (let j = 0; j <= n - i; j++) {
-        const cx = pad + i * s;
-        const cy = size - pad - j * s;
-        loops += `<rect class="kolam__line" pathLength="1" x="${cx - w / 2}" y="${cy - w / 2}" width="${w}" height="${w}" rx="${w * 0.32}" transform="rotate(45 ${cx} ${cy})"/>`;
-        dots += `<circle class="kolam__dot" cx="${cx}" cy="${cy}" r="3.4"/>`;
-      }
-    }
-    // petals at the two tips
-    const petal = (x, y, rot) =>
-      `<path class="kolam__line" pathLength="1" transform="translate(${x} ${y}) rotate(${rot})" d="M0 0 C -15 -14 -12 -36 0 -50 C 12 -36 15 -14 0 0 Z"/>`;
-    const top = petal(pad, size - pad - n * s - s * 0.55, 0);
-    const right = petal(pad + n * s + s * 0.55, size - pad, 90);
-    return `<svg class="kolam ${extraClass}" viewBox="0 0 ${size} ${size}" aria-hidden="true" focusable="false">
-      <g fill="none">${loops}${top}${right}</g><g>${dots}</g></svg>`;
-  }
+  // Kolam corner: the banner's own corner, cleaned up into crisp art (assets/images/kolam-corner.png).
+  const kolam = () => `<img class="kolam" src="assets/images/kolam-corner.png" alt="" width="685" height="702">`;
 
   const sparkle = (cls = "") =>
     `<svg class="sparkle ${cls}" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 0C12.9 7.4 16.6 11.1 24 12 16.6 12.9 12.9 16.6 12 24 11.1 16.6 7.4 12.9 0 12 7.4 11.1 11.1 7.4 12 0Z"/></svg>`;
@@ -48,10 +22,15 @@ const ART = (function () {
   <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header" data-header>
     <nav class="nav" aria-label="Main">
-      <a class="nav__brand" href="index.html" aria-label="HCIPAI Symposium 2027 — Home">
-        <img src="assets/logos/hcipai.png" alt="" width="40" height="57">
-        <span class="nav__brand-text">Symposium<b>2027</b></span>
-      </a>
+      <div class="nav__brands">
+        <a class="nav__brand" href="index.html" aria-label="HCIPAI Symposium 2027 — Home">
+          <img src="assets/logos/hcipai.png" alt="" width="40" height="57">
+          <span class="nav__brand-text">Symposium<b>2027</b></span>
+        </a>
+        <a class="nav__host" href="about-gcet.html" aria-label="Hosted by Geethanjali College of Engineering and Technology">
+          <img src="assets/logos/gcet.png" alt="" width="44" height="45">
+        </a>
+      </div>
 
       <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="nav-menu">
         <span class="sr-only">Menu</span>
@@ -83,7 +62,7 @@ const ART = (function () {
   const footer = `
   <footer class="site-footer">
     <div class="site-footer__skyline" aria-hidden="true">
-      <img src="assets/images/skyline.png" alt="" width="880" height="212" loading="lazy">
+      <img src="assets/images/skyline.png" alt="" width="2554" height="710" loading="lazy">
     </div>
     <div class="site-footer__body">
       <div class="site-footer__top">
@@ -128,7 +107,7 @@ const ART = (function () {
   document.body.insertAdjacentHTML("beforeend", footer);
 
   // Ornaments: any element with data-kolam gets a kolam corner drawn into it.
-  document.querySelectorAll("[data-kolam]").forEach((el) => (el.innerHTML = ART.kolam(el.dataset.kolam)));
+  document.querySelectorAll("[data-kolam]").forEach((el) => (el.innerHTML = ART.kolam()));
   document.querySelectorAll("[data-sparkle]").forEach((el) => el.insertAdjacentHTML("beforeend", ART.sparkle(el.dataset.sparkle)));
 
   // Stretch the footer wordmark to the full width of the page.

@@ -34,8 +34,9 @@ Almost all content lives in **`js/data.js`**:
 - **Photos:** speakers/committee `photo: "assets/images/…"` (square, ≥ 400×400); `""` shows a placeholder.
 - **Campus carousel:** slides are `<img>` tags in `about-gcet.html`, files in `assets/images/campus/`
   (3:2, 1600px wide, ~250 KB each — resize originals before adding; full camera files are ~14 MB).
-- **Logos / skyline:** drop HD files over `assets/logos/hcipai.png`, `gcet.png`, `nba.png` and
-  `assets/images/skyline.png` (transparent PNG, same names). The current ones are cropped from the draft banner.
+- **Art:** `assets/images/skyline.png` is the HD skyline with the Charminar set in from the draft banner;
+  `assets/images/kolam-corner.png` is the banner's corner, cleaned up; `assets/images/paisley.png` is the
+  Canva page-15 pattern (line shapes only, tinted in CSS). Replace any of them with HD files of the same name.
 - Navigation and footer are shared across pages in `js/layout.js`. Animations live in `js/motion.js` and
   switch off for visitors who prefer reduced motion.
 
@@ -57,7 +58,9 @@ assets/             Logos, skyline, paisley tile (from Canva page 15), draft ban
 
 ## Pending from organisers / design team
 
-- [ ] HD logos (HCIPAI, GCET, NBA) and skyline as transparent PNG/SVG — current ones are crops of the draft banner
+- [ ] HD logos (HCIPAI, GCET) as transparent PNG/SVG — current ones are crops of the draft banner
+- [ ] HD Charminar (Canva page 13) — the one in the skyline is enlarged from the draft banner, so slightly soft
+- [ ] About GCET: Pharmacy and AR/VR Lab details (placeholders in `about-gcet.html`)
 - [ ] "Horizon" font file (banner's HCIPAI lettering) if it can be licensed for the web; Anybody is used meanwhile
 - [ ] Registration URL
 - [ ] What each pass includes
