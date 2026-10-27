@@ -69,3 +69,15 @@ These are all low resolution (623×303 or 640×480), which is too small for a fu
 
 ## Flag for the design team
 The banner's NAAC badge reads **"Accredited University"**, but GCET is an autonomous *college*, not a university. The badge should probably read "Accredited Institution" or just "NAAC A+".
+
+## Geethanjali College of Pharmacy (shared by the organisers, 2026-10-27)
+Sources: geethanjaliinstitutions.com/pharmacy (about page, GCP brochure, NAAC DVV 1.2), shiksha.com, careers360.com, kollegeapply.com, telegraphindia.com
+- Teja Educational Society; own block on the Geethanjali campus, Cheeryal, Keesara (M), Medchal-Malkajgiri
+- Established 2007
+- B.Pharm (4 yrs), Pharm.D (6 yrs incl. 1-yr residency), Pharm.D PB (3 yrs), M.Pharm (2 yrs: Pharmaceutics, Pharmaceutical Analysis, Pharmacology, Regulatory Affairs)
+- Permanently affiliated to JNTUH; approved by PCI and AICTE
+- NAAC A+ (re-accredited); NBA for B.Pharm
+- UGC 2(f) & 12(B); DSIR SIRO; ISO 9001:2015
+- CPCSEA-approved animal house; medicinal herb garden; clinical tie-up with a 300-bed multi-specialty hospital
+- MSME Host Institution / Business Incubator
+- ~80% placement for eligible students (Parexel, Vimta Labs, Cognizant, MedPlus) — not shown on the site; confirm before using
