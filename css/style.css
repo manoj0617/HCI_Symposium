@@ -296,11 +296,9 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .hero__kolam { position: absolute; bottom: 0; width: var(--kolam); pointer-events: none; }
 .hero__kolam--l { left: 0; }
 .hero__kolam--r { right: 0; }
-.hero__kolam--r svg { transform: scaleX(-1); }
+.hero__kolam--r .kolam { transform: scaleX(-1); }
 
-.kolam { width: 100%; height: auto; overflow: visible; }
-.kolam__line { stroke: #8fb5e6; stroke-width: 2.4px; stroke-linejoin: round; vector-effect: non-scaling-stroke; }
-.kolam__dot { fill: #3f78c8; }
+.kolam { display: block; width: 100%; height: auto; }
 
 @media (max-width: 900px) {
   .hero { --n: clamp(2.4rem, 10.5vw, 5.4rem); }
@@ -549,7 +547,7 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   --lane: 54px;
   display: flex; align-items: stretch; width: max-content; height: 100%; max-height: 680px;
   /* the wide right padding lets the last stop reach the middle of the screen */
-  padding: 0 45vw 0 max(var(--gutter), (100vw - var(--wrap)) / 2);
+  padding: 0 16vw 0 max(var(--gutter), (100vw - var(--wrap)) / 2);
 }
 .roadmap--h .roadmap__track::before, .roadmap--h .roadmap__track::after { display: none; }
 .road { position: absolute; left: 0; top: 0; overflow: visible; pointer-events: none; z-index: 0; }
@@ -645,10 +643,10 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 }
 .page-head h1 { font: clamp(2.8rem, 7vw, 5.6rem) / 1 var(--f-sym); letter-spacing: -0.01em; }
 .page-head p:not(.eyebrow) { margin: 1.1rem auto 0; max-width: 640px; color: var(--muted); font-size: 1.1rem; }
-.page-head__kolam { position: absolute; bottom: -4px; width: clamp(90px, 10vw, 170px); }
-.page-head__kolam--l { left: -4px; }
-.page-head__kolam--r { right: -4px; }
-.page-head__kolam--r svg { transform: scaleX(-1); }
+.page-head__kolam { position: absolute; bottom: 0; width: clamp(90px, 10vw, 170px); }
+.page-head__kolam--l { left: 0; }
+.page-head__kolam--r { right: 0; }
+.page-head__kolam--r .kolam { transform: scaleX(-1); }
 
 /* About GCET */
 .split { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr); gap: clamp(2rem, 5vw, 5rem); align-items: center; }
@@ -692,6 +690,23 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   font-variant-numeric: tabular-nums; letter-spacing: -0.02em; white-space: nowrap;
 }
 .stat__label { color: var(--muted); font-size: 0.95rem; margin-top: 0.7rem; }
+
+.branches { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.4rem; }
+.branches li { padding: 0.4rem 0.85rem; border-radius: 999px; font-size: 0.88rem; color: var(--plum-deep); background: var(--plum-tint); }
+
+/* Pharmacy + XR Lab */
+.units { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(1rem, 2vw, 1.5rem); }
+@media (max-width: 760px) { .units { grid-template-columns: 1fr; } }
+.unit { padding: clamp(1.75rem, 3.5vw, 2.75rem); border-radius: var(--radius); }
+.unit--xr { color: #fff; background: linear-gradient(150deg, #8a6386, var(--plum) 45%, var(--plum-deep)); box-shadow: 0 30px 60px -36px rgb(42 26 44 / 0.8); }
+.unit__kicker { font: 700 0.75rem var(--f-label); letter-spacing: 0.18em; text-transform: uppercase; color: var(--blue-deep); }
+.unit--xr .unit__kicker { color: #c9dbf4; }
+.unit__title { font: clamp(1.9rem, 3.4vw, 2.6rem) / 1.1 var(--f-sym); margin-top: 0.4rem; }
+.unit__text { margin-top: 0.9rem; color: var(--muted); }
+.unit--xr .unit__text { color: #eadfeb; }
+.unit__links { margin-top: 1.25rem; font-size: 0.95rem; }
+.unit--xr a { color: #fff; }
+.placeholder-text { font-style: italic; opacity: 0.85; }
 
 /* Achievements: four rankings in one row, then three honours as a dated list */
 .ranks { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border-block: 1px solid var(--border); }
@@ -737,7 +752,8 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 /* Charminar tips meet the bottom edge of the map exactly */
 body[data-page="home"] .site-footer { margin-top: 0; }
 .site-footer__skyline { position: relative; z-index: 2; display: flex; justify-content: center; pointer-events: none; }
-.site-footer__skyline img { width: min(1000px, 92vw); height: auto; display: block; }
+.site-footer__skyline { align-items: flex-end; }
+.site-footer__skyline img { width: min(1100px, 92vw); height: auto; display: block; margin-bottom: -1px; }
 .site-footer__body {
   position: relative; isolation: isolate; overflow: hidden;
   padding: clamp(3rem, 6vw, 5rem) var(--gutter) 1.5rem;

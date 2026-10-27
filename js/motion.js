@@ -193,7 +193,7 @@
         pts = stops.map((s, i) => ({ x: s.offsetLeft + s.offsetWidth / 2, split: modes[i] === "split" }));
         const path = (sign) => {
           const y = (p) => (p.split ? c + sign * lane : c);
-          let d = `M0 ${y(pts[0])} L${pts[0].x} ${y(pts[0])}`;
+          let d = `M${pts[0].x} ${y(pts[0])}`; // the road starts at the first stop
           for (let i = 1; i < pts.length; i++) {
             const a = pts[i - 1];
             const b = pts[i];
@@ -218,14 +218,17 @@
       const distance = () => Math.max(0, track.scrollWidth - window.innerWidth);
       const update = () => {
         const x = -gsap.getProperty(track, "x");
-        const head = x + window.innerWidth * 0.62; // where the road is "drawn" up to
+        // The road is drawn from the first stop to the last as the section scrolls.
+        const f = distance() ? Math.min(1, Math.max(0, x / distance())) : 1;
+        const start = pts.length ? pts[0].x : 0;
         const end = pts.length ? pts[pts.length - 1].x : width;
-        const p = Math.min(1, head / end);
+        const head = start + f * (end - start);
+        const p = f;
         if (drawA) {
           drawA.style.strokeDashoffset = 1 - p;
           drawB.style.strokeDashoffset = 1 - p;
         }
-        stops.forEach((s) => s.classList.toggle("is-passed", s.offsetLeft + s.offsetWidth * 0.3 < head));
+        stops.forEach((s) => s.classList.toggle("is-passed", s.offsetLeft + s.offsetWidth / 2 <= head + 2));
         setDay(day2 && x + window.innerWidth / 2 > day2.offsetLeft ? 1 : 0);
       };
 
