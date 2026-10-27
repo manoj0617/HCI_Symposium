@@ -630,7 +630,7 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 
 /* ---------- Venue ---------- */
 .venue-section { padding-bottom: 0; z-index: 1; }
-.venue { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.7fr); gap: clamp(1.5rem, 4vw, 4rem); align-items: center; }
+.venue { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.7fr); gap: clamp(1.5rem, 4vw, 4rem); align-items: end; }
 .venue__name { font: 1.35rem/1.3 var(--f-sym); margin-top: 1.4rem; }
 .venue__address { color: var(--muted); margin-top: 0.6rem; }
 .venue__actions { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.75rem; }
@@ -740,7 +740,8 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
    Footer — full width, edge to edge
    ========================================================================== */
 .site-footer { position: relative; margin-top: clamp(4rem, 8vw, 7rem); }
-body[data-page="home"] .site-footer { margin-top: -24px; }
+/* Charminar tips meet the bottom edge of the map exactly */
+body[data-page="home"] .site-footer { margin-top: 0; }
 .site-footer__skyline { position: relative; z-index: 2; display: flex; justify-content: center; pointer-events: none; }
 .site-footer__skyline img { width: min(1000px, 92vw); height: auto; display: block; }
 .site-footer__body {
