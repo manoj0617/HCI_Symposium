@@ -58,9 +58,8 @@ assets/             Logos, skyline, paisley tile (from Canva page 15), draft ban
 
 ## Pending from organisers / design team
 
-- [ ] HD logos (HCIPAI, GCET) as transparent PNG/SVG — current ones are crops of the draft banner
 - [ ] HD Charminar (Canva page 13) — the one in the skyline is enlarged from the draft banner, so slightly soft
-- [ ] About GCET: Pharmacy and AR/VR Lab details (placeholders in `about-gcet.html`)
+- [ ] About GCET: AR/VR Lab description
 - [ ] "Horizon" font file (banner's HCIPAI lettering) if it can be licensed for the web; Anybody is used meanwhile
 - [ ] Registration URL
 - [ ] What each pass includes

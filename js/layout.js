@@ -28,7 +28,7 @@ const ART = (function () {
           <span class="nav__brand-text">Symposium<b>2027</b></span>
         </a>
         <a class="nav__host" href="about-gcet.html" aria-label="Hosted by Geethanjali College of Engineering and Technology">
-          <img src="assets/logos/gcet.png" alt="" width="44" height="45">
+          <img src="assets/logos/gcet.png" alt="" width="44" height="44">
         </a>
       </div>
 
