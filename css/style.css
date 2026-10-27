@@ -351,18 +351,28 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
    Sections
    ========================================================================== */
 .section { position: relative; isolation: isolate; padding-block: clamp(4.5rem, 9vw, 8rem); }
-/* Paisley from the Canva file (page 15). At full strength it drowns text and fights the plum,
-   so it is used only as a faint watermark behind content sections. */
-.section--pattern::before {
-  content: ""; position: absolute; inset: 0; z-index: -1; opacity: 0.1;
-  background: url("../assets/images/paisley.png") 0 0 / 626px 313px repeat;
+/* Paisley from the Canva file (page 15).
+   The file is a bright blue print; at full strength it drowns text and fights the plum. So the PNG
+   holds only the line shapes (as transparency) and is used as a mask: CSS picks the colour
+   (--paisley-ink), the strength (--paisley-alpha) and the size, and the edges fade out so the
+   pattern never starts or stops as a hard band. Not used on the hero or the track cards. */
+:root { --paisley-size: 500px 250px; --paisley-ink: #6f9be0; --paisley-alpha: 0.16; }
+@media (max-width: 640px) { :root { --paisley-size: 360px 180px; } }
+.section--pattern::before,
+.page-head::before,
+.site-footer__body::before {
+  content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none;
+  background-color: var(--paisley-ink); opacity: var(--paisley-alpha);
+  -webkit-mask: url("../assets/images/paisley.png") 0 0 / var(--paisley-size) repeat, linear-gradient(transparent, #000 14%, #000 86%, transparent);
+  -webkit-mask-composite: source-in;
+  mask: url("../assets/images/paisley.png") 0 0 / var(--paisley-size) repeat, linear-gradient(transparent, #000 14%, #000 86%, transparent);
+  mask-composite: intersect;
 }
-@media (max-width: 640px) { .section--pattern::before, .page-head::before { background-size: 420px 210px; } }
 .section--pattern::after {
   content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none;
   background:
     radial-gradient(45% 55% at 8% 15%, rgb(120 160 215 / 0.2), transparent 70%),
-    radial-gradient(40% 50% at 92% 85%, rgb(106 71 103 / 0.16), transparent 70%);
+    radial-gradient(40% 45% at 92% 60%, rgb(106 71 103 / 0.12), transparent 70%);
 }
 .section--flush { padding-bottom: 0; }
 
@@ -635,10 +645,6 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   position: relative; isolation: isolate; overflow: hidden; text-align: center;
   padding: calc(var(--header-h) + clamp(3rem, 8vw, 6rem)) var(--gutter) clamp(4rem, 9vw, 7rem);
 }
-.page-head::before {
-  content: ""; position: absolute; inset: 0; z-index: -1; opacity: 0.1;
-  background: url("../assets/images/paisley.png") 0 0 / 626px 313px repeat;
-}
 .page-head::after {
   content: ""; position: absolute; inset: 0; z-index: -1;
   background: radial-gradient(50% 60% at 20% 10%, rgb(106 71 103 / 0.14), transparent 70%), radial-gradient(40% 60% at 85% 30%, rgb(120 160 215 / 0.2), transparent 70%);
@@ -743,10 +749,7 @@ body[data-page="home"] .site-footer { margin-top: -24px; }
   background: linear-gradient(180deg, var(--plum-deep), var(--plum-ink));
   color: #e9dfeb;
 }
-.site-footer__body::before {
-  content: ""; position: absolute; inset: 0; z-index: -1; opacity: 0.08;
-  background: url("../assets/images/paisley.png") 0 0 / 626px 313px repeat; filter: brightness(2.2);
-}
+.site-footer__body { --paisley-ink: #c9dbf4; --paisley-alpha: 0.07; }
 .site-footer__top { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 2.5rem clamp(2rem, 5vw, 5rem); }
 .site-footer__brand { display: flex; gap: 1.25rem; align-items: flex-start; max-width: 28rem; }
 .site-footer__brand img { width: 64px; height: auto; padding: 0.55rem; background: #fff; border-radius: 16px; }
