@@ -23,9 +23,9 @@ Almost all content lives in **`js/data.js`**:
 | Scrolling strip under the banner | `marquee` |
 | "What's on" cards, workshop tracks | `experiences`, `tracks` |
 | Day 1 / Day 2 programme (roadmap) | `schedule` |
-| Speakers, workshop facilitators | `speakers` |
-| Organising committee (and its row pattern) | `committee` |
-| Venue, contact email/phone, social links | `venue`, `contact` |
+| Speakers, workshop facilitators (`announced: true` shows the cards) | `speakers` |
+| Organising committee (`committeeAnnounced: true` shows the cards) | `committee` |
+| Venue, contact email, social links | `venue`, `contact` |
 
 - **Early bird:** `pricing.earlyBirdEnds` (currently `2027-01-31`). Cards switch to regular prices after that day (IST).
 - **Programme:** each stop has a `kind`. `split` = different session per track (the road forks), `parallel` = same
@@ -52,7 +52,7 @@ js/layout.js        Shared header/nav, footer, kolam + sparkle ornaments
 js/main.js          Menus, renders content from data.js, carousel
 js/motion.js        GSAP scroll/hover effects
 js/vendor/          GSAP 3.13 + ScrollTrigger
-assets/             Logos, skyline, paisley texture, draft banner
+assets/             Logos, skyline, paisley tile (from Canva page 15), draft banner
 ```
 
 ## Pending from organisers / design team
@@ -62,4 +62,4 @@ assets/             Logos, skyline, paisley texture, draft banner
 - [ ] Registration URL
 - [ ] What each pass includes
 - [ ] Speakers, facilitators, committee names and photos
-- [ ] Contact phone; confirm venue address
+- [ ] Confirm venue address

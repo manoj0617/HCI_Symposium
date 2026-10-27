@@ -118,7 +118,9 @@ const SITE = {
   ],
 
   // TODO: names, photos. photo: "assets/images/speakers/name.jpg" (square, ≥ 400×400), or "" for a placeholder.
+  // Set announced: true once names are in, to show speaker cards instead of "To be announced".
   speakers: {
+    announced: false,
     keynote: [
       { name: "To be announced", session: "Keynote I", topic: "HCI and the Future of Human–Technology Interaction", photo: "" },
       { name: "To be announced", session: "Keynote II", topic: "Designing Interactive & Immersive Experiences", photo: "" },
@@ -132,6 +134,7 @@ const SITE = {
 
   // TODO: placeholder committee. `rows` sets how many cards go on each line,
   // e.g. [1] → 1, [2] → 2, [3, 2, 3] → 3 / 2 / 3. Leave it out to fill rows of 3.
+  committeeAnnounced: false, // true = show the member cards below instead of "To be announced"
   committee: [
     { group: "Chief Patron", rows: [1], members: [{ name: "Member Name", role: "Role / Designation", photo: "" }] },
     {
@@ -166,7 +169,6 @@ const SITE = {
   },
   contact: {
     email: "xrresearchlab@gcet.edu.in", // XR Research Lab, GCET
-    phone: "+91 00000 00000", // TODO
     socials: [{ label: "Instagram", handle: "@ar.vr.researchlab", url: "https://www.instagram.com/ar.vr.researchlab/" }],
   },
 };

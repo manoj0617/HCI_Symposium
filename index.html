@@ -20,7 +20,6 @@
 
     <!-- ============ Hero: the Canva banner, rebuilt in live type ============ -->
     <section class="hero" aria-labelledby="hero-title" data-hero>
-      <div class="hero__bg" data-depth="0.15" aria-hidden="true"></div>
       <div class="hero__glow hero__glow--a" data-depth="0.4" aria-hidden="true"></div>
       <div class="hero__glow hero__glow--b" data-depth="0.25" aria-hidden="true"></div>
 
@@ -56,7 +55,7 @@
         </div>
       </div>
 
-      <img class="hero__skyline" src="assets/images/skyline.png" alt="" width="880" height="212" data-depth="0.2" aria-hidden="true">
+      <img class="hero__skyline" src="assets/images/skyline.png" alt="" width="880" height="212" aria-hidden="true">
       <div class="hero__kolam hero__kolam--l" data-kolam aria-hidden="true"></div>
       <div class="hero__kolam hero__kolam--r" data-kolam aria-hidden="true"></div>
     </section>
@@ -122,11 +121,9 @@
         <header class="head">
           <p class="eyebrow">Speakers</p>
           <h2 class="title" id="speakers-title" data-split>Who’s on stage</h2>
-          <p class="lead" data-reveal>Names are being confirmed. Each card shows the session it belongs to.</p>
         </header>
-        <div class="people people--speakers" id="keynote-speakers" data-stagger></div>
-        <h3 class="subhead" data-reveal>Workshop facilitators</h3>
-        <div class="people people--speakers" id="workshop-facilitators" data-stagger></div>
+        <!-- Shows "To be announced" until SITE.speakers.announced is true -->
+        <div id="speakers-list"></div>
       </div>
     </section>
 
