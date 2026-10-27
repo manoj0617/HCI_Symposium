@@ -278,14 +278,21 @@
       <p class="person__topic">${esc(p.topic)}</p>
     </article>`;
 
-  const keynoteEl = $("keynote-speakers");
-  if (keynoteEl) keynoteEl.innerHTML = SITE.speakers.keynote.map(speakerCard).join("");
-  const workshopEl = $("workshop-facilitators");
-  if (workshopEl) workshopEl.innerHTML = SITE.speakers.workshop.map(speakerCard).join("");
+  const tba = '<p class="tba" data-reveal>To be announced</p>';
+
+  const speakersEl = $("speakers-list");
+  if (speakersEl) {
+    speakersEl.innerHTML = SITE.speakers.announced
+      ? `<div class="people" data-stagger>${SITE.speakers.keynote.map(speakerCard).join("")}</div>
+         <h3 class="subhead" data-reveal>Workshop facilitators</h3>
+         <div class="people" data-stagger>${SITE.speakers.workshop.map(speakerCard).join("")}</div>`
+      : tba;
+  }
 
   // Committee: rows follow the group's `rows` pattern (e.g. 1 / 2 / 3 or 3 / 2 / 3), always centred.
   const committeeEl = $("committee");
-  if (committeeEl) {
+  if (committeeEl && !SITE.committeeAnnounced) committeeEl.innerHTML = tba;
+  else if (committeeEl) {
     committeeEl.innerHTML = SITE.committee
       .map((g) => {
         const pattern = g.rows && g.rows.length ? g.rows : [3];
@@ -378,7 +385,6 @@
     el.textContent = insta.handle || insta.url;
     el.href = insta.url;
   });
-  document.querySelectorAll("[data-contact-phone]").forEach((el) => (el.textContent = SITE.contact.phone));
 
   const q = encodeURIComponent(SITE.venue.mapQuery);
   const mapEl = $("venue-map");

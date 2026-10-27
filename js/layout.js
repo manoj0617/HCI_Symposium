@@ -20,9 +20,7 @@ const ART = (function () {
         const cx = pad + i * s;
         const cy = size - pad - j * s;
         loops += `<rect class="kolam__line" pathLength="1" x="${cx - w / 2}" y="${cy - w / 2}" width="${w}" height="${w}" rx="${w * 0.32}" transform="rotate(45 ${cx} ${cy})"/>`;
-        dots += `<circle class="kolam__dot" cx="${cx}" cy="${cy}" r="3.2"/>`;
-        // inner points between diagonal neighbours
-        if (i < n && j < n - i) dots += `<circle class="kolam__dot" cx="${cx + s / 2}" cy="${cy - s / 2}" r="2.4"/>`;
+        dots += `<circle class="kolam__dot" cx="${cx}" cy="${cy}" r="3.4"/>`;
       }
     }
     // petals at the two tips
@@ -49,7 +47,7 @@ const ART = (function () {
   const header = `
   <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header" data-header>
-    <nav class="nav wrap" aria-label="Main">
+    <nav class="nav" aria-label="Main">
       <a class="nav__brand" href="index.html" aria-label="HCIPAI Symposium 2027 — Home">
         <img src="assets/logos/hcipai.png" alt="" width="40" height="57">
         <span class="nav__brand-text">Symposium<b>2027</b></span>
@@ -85,7 +83,7 @@ const ART = (function () {
   const footer = `
   <footer class="site-footer">
     <div class="site-footer__skyline" aria-hidden="true">
-      <img src="assets/images/skyline.png" alt="" width="880" height="212" loading="lazy" data-skyline>
+      <img src="assets/images/skyline.png" alt="" width="880" height="212" loading="lazy">
     </div>
     <div class="site-footer__body">
       <div class="site-footer__top">
@@ -110,7 +108,6 @@ const ART = (function () {
           <h2 class="site-footer__heading">Reach us</h2>
           <ul class="site-footer__links">
             <li><a href="mailto:${SITE.contact.email}">${SITE.contact.email}</a></li>
-            <li>${SITE.contact.phone}</li>
             ${socials}
           </ul>
         </div>

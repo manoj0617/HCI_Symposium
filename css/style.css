@@ -101,7 +101,7 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 [data-tilt] { position: relative; transform-style: preserve-3d; }
 [data-tilt]::after {
   content: ""; position: absolute; inset: 0; border-radius: inherit; pointer-events: none;
-  background: radial-gradient(420px circle at var(--mx, 50%) var(--my, 0%), rgb(255 255 255 / 0.45), transparent 45%);
+  background: radial-gradient(140px circle at var(--mx, 50%) var(--my, 0%), rgb(255 255 255 / 0.28), transparent 70%);
   opacity: 0; transition: opacity 0.4s;
 }
 [data-tilt]:hover::after { opacity: 1; }
@@ -147,7 +147,8 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   -webkit-backdrop-filter: blur(14px) saturate(160%); backdrop-filter: blur(14px) saturate(160%);
   box-shadow: 0 1px 0 var(--border), 0 12px 30px -24px rgb(61 39 64 / 0.5);
 }
-.nav { display: flex; align-items: center; justify-content: space-between; min-height: var(--header-h); gap: 1rem; }
+.nav { display: flex; align-items: center; justify-content: space-between; min-height: var(--header-h); gap: 1rem; padding-inline: var(--gutter); }
+.nav__menu { margin-left: auto; }
 .nav__brand { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; color: var(--ink); }
 .nav__brand img { height: 46px; width: auto; }
 .nav__brand-text { font: 1.05rem/1 var(--f-sym); letter-spacing: 0.14em; text-transform: uppercase; display: grid; gap: 0.2rem; }
@@ -231,11 +232,6 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   padding-top: calc(var(--header-h) + 0.5rem);
   background: var(--paper);
 }
-.hero__bg {
-  position: absolute; inset: -12% -6%; z-index: -2;
-  background: url("../assets/images/paisley.svg") 0 0 / 260px repeat;
-  opacity: 0.28;
-}
 .hero__glow { position: absolute; z-index: -1; border-radius: 50%; filter: blur(60px); pointer-events: none; }
 .hero__glow--a { width: 46vw; height: 46vw; left: -12vw; top: -14vw; background: rgb(106 71 103 / 0.16); }
 .hero__glow--b { width: 40vw; height: 40vw; right: -10vw; top: 18vh; background: rgb(120 160 215 / 0.22); }
@@ -294,32 +290,46 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 }
 .hero__chip b { font-family: var(--f-label); text-transform: uppercase; letter-spacing: 0.08em; color: var(--plum); }
 
+/* Corners and skyline sit side by side: the skyline only uses the space between the two kolams. */
+.hero { --kolam: clamp(64px, 11vw, 190px); }
 .hero__skyline {
-  position: absolute; z-index: -1; left: 0; right: 0; bottom: -2px; margin-inline: auto;
-  width: min(1180px, 78vw); height: auto; pointer-events: none; opacity: 0.85;
+  position: absolute; z-index: -1; left: 0; right: 0; bottom: 0; margin-inline: auto;
+  width: min(960px, 100% - 2 * var(--kolam) - 2rem); height: auto; pointer-events: none;
 }
-.hero__kolam { position: absolute; bottom: -4px; width: clamp(110px, 13vw, 230px); pointer-events: none; }
-.hero__kolam--l { left: -4px; }
-.hero__kolam--r { right: -4px; }
+.hero__kolam { position: absolute; bottom: 0; width: var(--kolam); pointer-events: none; }
+.hero__kolam--l { left: 0; }
+.hero__kolam--r { right: 0; }
 .hero__kolam--r svg { transform: scaleX(-1); }
 
 .kolam { width: 100%; height: auto; overflow: visible; }
-.kolam__line { stroke: #8fb5e6; stroke-width: 3.4; stroke-linejoin: round; }
+.kolam__line { stroke: #8fb5e6; stroke-width: 2.4px; stroke-linejoin: round; vector-effect: non-scaling-stroke; }
 .kolam__dot { fill: #3f78c8; }
 
 @media (max-width: 900px) {
   .hero { --n: clamp(2.4rem, 10.5vw, 5.4rem); }
   .hero__badges { justify-content: center; }
-  .hero__inner { grid-template-columns: 1fr; justify-items: center; text-align: center; padding-bottom: clamp(130px, 34vw, 220px); }
-  .hero__skyline { width: 118vw; left: 50%; right: auto; margin-left: -59vw; }
+  .hero__inner { grid-template-columns: 1fr; justify-items: center; text-align: center; padding-bottom: clamp(90px, 24vw, 200px); }
 }
 @media (max-width: 560px) {
-  .lockup__row { flex-direction: column-reverse; align-items: flex-start; gap: calc(var(--n) * 0.1); }
-  .lockup__date { grid-auto-flow: column; align-items: baseline; gap: 0.5em; }
-  .lockup__sym { font-size: calc(var(--n) * 0.93); }
-  .hero__actions .btn { flex: 1 1 100%; }
-  .hero__formats { letter-spacing: 0.04em; }
-  .page-head__kolam { width: 64px; opacity: 0.7; }
+  .hero { --n: 12.4vw; --kolam: 56px; padding-top: calc(var(--header-h) + 0.25rem); }
+  .hero__badges img { height: 36px; }
+  .naac__name, .naac__grade { font-size: 0.92rem; }
+  .hero__inner { gap: 1.75rem; padding-top: 1.25rem; align-content: center; }
+  .lockup { gap: calc(var(--n) * 0.12); }
+  .lockup__row { flex-direction: column-reverse; align-items: flex-start; gap: calc(var(--n) * 0.08); }
+  .lockup__date { grid-auto-flow: column; align-items: baseline; gap: 0.4em; }
+  .lockup__date b { font-size: calc(var(--n) * 0.4); }
+  .lockup__date span { font-size: calc(var(--n) * 0.36); }
+  .lockup__sym { font-size: calc(var(--n) * 0.92); }
+  .hero__tagline { font-size: 1.3rem; }
+  .hero__sub { font-size: 1.1rem; }
+  .hero__formats { font-size: 0.82rem; letter-spacing: 0.03em; }
+  .hero__formats span { margin-inline: 0.3em; }
+  .hero__actions { margin-top: 1.25rem; }
+  .hero__actions .btn { flex: 1 1 100%; padding-block: 0.9rem; }
+  .hero__chip { background: none; border: 0; box-shadow: none; padding: 0; -webkit-backdrop-filter: none; backdrop-filter: none; font-size: 0.85rem; }
+  .hero__skyline { width: calc(100% - 2 * var(--kolam) - 0.5rem); }
+  .page-head__kolam { width: 56px; }
 }
 
 /* ---------- Marquee ---------- */
@@ -341,15 +351,28 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
    Sections
    ========================================================================== */
 .section { position: relative; isolation: isolate; padding-block: clamp(4.5rem, 9vw, 8rem); }
-.section--pattern::before {
-  content: ""; position: absolute; inset: 0; z-index: -1; opacity: 0.22;
-  background: url("../assets/images/paisley.svg") 0 0 / 220px repeat;
+/* Paisley from the Canva file (page 15).
+   The file is a bright blue print; at full strength it drowns text and fights the plum. So the PNG
+   holds only the line shapes (as transparency) and is used as a mask: CSS picks the colour
+   (--paisley-ink), the strength (--paisley-alpha) and the size, and the edges fade out so the
+   pattern never starts or stops as a hard band. Not used on the hero or the track cards. */
+:root { --paisley-size: 500px 250px; --paisley-ink: #6f9be0; --paisley-alpha: 0.16; }
+@media (max-width: 640px) { :root { --paisley-size: 360px 180px; } }
+.section--pattern::before,
+.page-head::before,
+.site-footer__body::before {
+  content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none;
+  background-color: var(--paisley-ink); opacity: var(--paisley-alpha);
+  -webkit-mask: url("../assets/images/paisley.png") 0 0 / var(--paisley-size) repeat, linear-gradient(transparent, #000 14%, #000 86%, transparent);
+  -webkit-mask-composite: source-in;
+  mask: url("../assets/images/paisley.png") 0 0 / var(--paisley-size) repeat, linear-gradient(transparent, #000 14%, #000 86%, transparent);
+  mask-composite: intersect;
 }
 .section--pattern::after {
   content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none;
   background:
     radial-gradient(45% 55% at 8% 15%, rgb(120 160 215 / 0.2), transparent 70%),
-    radial-gradient(40% 50% at 92% 85%, rgb(106 71 103 / 0.16), transparent 70%);
+    radial-gradient(40% 45% at 92% 60%, rgb(106 71 103 / 0.12), transparent 70%);
 }
 .section--flush { padding-bottom: 0; }
 
@@ -393,10 +416,6 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 }
 .track--a { background: linear-gradient(150deg, #8a6386 0%, var(--plum) 40%, var(--plum-deep) 100%); }
 .track--b { background: linear-gradient(150deg, #9cc0ec 0%, #5c8ccc 40%, #2d5790 100%); }
-.track::before {
-  content: ""; position: absolute; inset: 0; opacity: 0.12; pointer-events: none;
-  background: url("../assets/images/paisley.svg") 0 0 / 220px repeat; filter: brightness(3);
-}
 @media (hover: hover) and (min-width: 761px) {
   .tracks:hover .track { flex-grow: 0.75; }
   .tracks .track:hover, .tracks .track:focus-visible { flex-grow: 1.6; }
@@ -523,19 +542,20 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .rm-anim .stop .end,
 .rm-anim .stop .stop__pause { transition: opacity 0.7s var(--ease), translate 0.7s var(--ease); }
 .rm-anim .stop:not(.is-passed) .stop__card,
-.rm-anim .stop:not(.is-passed) .stop__time,
 .rm-anim .stop:not(.is-passed) .day,
-.rm-anim .stop:not(.is-passed) .end,
-.rm-anim .stop:not(.is-passed) .stop__pause { opacity: 0.18; translate: 0 18px; }
+.rm-anim .stop:not(.is-passed) .end { opacity: 0.18; translate: 0 18px; }
+.rm-anim .stop:not(.is-passed) .stop__time,
+.rm-anim .stop:not(.is-passed) .stop__pause { opacity: 0.25; }
 
 /* Horizontal road */
-.roadmap--h { height: 100vh; display: flex; flex-direction: column; justify-content: center; padding-top: var(--header-h); overflow: hidden; }
-.roadmap--h .roadmap__bar { margin-bottom: 0; }
-.roadmap--h .roadmap__viewport { width: 100%; padding: 0; }
+.roadmap--h { height: 100vh; display: flex; flex-direction: column; padding: calc(var(--header-h) + 1rem) 0 1.5rem; overflow: hidden; }
+.roadmap--h .roadmap__bar { flex: none; margin-bottom: 0; }
+.roadmap--h .roadmap__viewport { flex: 1; min-height: 0; width: 100%; padding: 0; }
 .roadmap--h .roadmap__track {
-  --lane: 58px;
-  display: flex; align-items: stretch; width: max-content; height: min(66vh, 640px);
-  padding: 0 12vw 0 max(var(--gutter), (100vw - var(--wrap)) / 2);
+  --lane: 54px;
+  display: flex; align-items: stretch; width: max-content; height: 100%; max-height: 680px;
+  /* the wide right padding lets the last stop reach the middle of the screen */
+  padding: 0 45vw 0 max(var(--gutter), (100vw - var(--wrap)) / 2);
 }
 .roadmap--h .roadmap__track::before, .roadmap--h .roadmap__track::after { display: none; }
 .road { position: absolute; left: 0; top: 0; overflow: visible; pointer-events: none; z-index: 0; }
@@ -553,7 +573,7 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .roadmap--h .stop--split { width: 330px; max-width: none; gap: 0; grid-template-columns: none; }
 .roadmap--h .stop--pause { width: 150px; }
 .roadmap--h .stop--day { width: 330px; padding: 0 24px; }
-.roadmap--h .stop--end { width: 320px; padding: 0 12px; }
+.roadmap--h .stop--end { width: 340px; padding: 0 12px 0 48px; }
 
 .roadmap--h .stop__node { left: 50%; top: 50%; margin: -9px 0 0 -9px; width: 18px; height: 18px; }
 .roadmap--h .stop__node--a { top: calc(50% - var(--lane)); }
@@ -583,14 +603,13 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .roadmap--h .stop[data-lane="split"] .stop__pause { top: 50%; bottom: auto; translate: 0 -50%; }
 .roadmap--h .stop--pause .stop__pause { bottom: calc(50% + 16px); flex-direction: column; align-items: center; gap: 0; }
 .roadmap--h .stop--pause[data-lane="split"] .stop__pause { bottom: auto; }
-.roadmap--h .stop--day .day, .roadmap--h .stop--end .end { grid-row: 1; align-self: end; padding-bottom: calc(var(--lane) + 1.5rem); }
-.roadmap--h .day__num { font-size: 3.4rem; }
+.roadmap--h .stop--day .day, .roadmap--h .stop--end .end { grid-row: 3; align-self: start; padding-top: 1.25rem; }
+.roadmap--h .day__num { font-size: 3rem; }
+.roadmap--h .end { justify-items: start; }
 .day__num { white-space: nowrap; }
 
-@media (max-height: 700px) {
-  .roadmap--h .roadmap__track { --lane: 44px; height: 72vh; }
-  .roadmap--h .stop__topic { display: none; }
-}
+/* ---------- "To be announced" (speakers, committee) ---------- */
+.tba { text-align: center; font: clamp(1.8rem, 4vw, 3rem) / 1.2 var(--f-tag); color: var(--plum); }
 
 /* ---------- People (speakers) ---------- */
 .people { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 300px)); justify-content: center; gap: clamp(1rem, 2vw, 1.5rem); }
@@ -625,10 +644,6 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .page-head {
   position: relative; isolation: isolate; overflow: hidden; text-align: center;
   padding: calc(var(--header-h) + clamp(3rem, 8vw, 6rem)) var(--gutter) clamp(4rem, 9vw, 7rem);
-}
-.page-head::before {
-  content: ""; position: absolute; inset: 0; z-index: -1; opacity: 0.25;
-  background: url("../assets/images/paisley.svg") 0 0 / 260px repeat;
 }
 .page-head::after {
   content: ""; position: absolute; inset: 0; z-index: -1;
@@ -684,8 +699,23 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 }
 .stat__label { color: var(--muted); font-size: 0.95rem; margin-top: 0.7rem; }
 
-.achievements { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr)); gap: 1rem; }
-.achievements li { padding: 1.2rem 1.4rem; border-radius: 18px; border-left: 4px solid var(--plum); }
+/* Achievements: four rankings in one row, then three honours as a dated list */
+.ranks { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border-block: 1px solid var(--border); }
+.rank { padding: clamp(1.5rem, 3vw, 2.5rem) clamp(1rem, 2vw, 1.75rem); }
+.rank + .rank { border-left: 1px solid var(--border); }
+.rank__fig { font: 900 clamp(2.6rem, 5vw, 4rem) / 1 var(--f-wide); font-stretch: 125%; color: var(--plum); letter-spacing: -0.02em; }
+.rank__fig sup { font-size: 0.4em; vertical-align: 1.2em; margin-left: 0.05em; }
+.rank__what { margin-top: 0.9rem; font: 1.15rem / 1.35 var(--f-sym); }
+.rank__who { margin-top: 0.6rem; font: 700 0.72rem var(--f-label); letter-spacing: 0.14em; text-transform: uppercase; color: var(--blue-deep); }
+.honours { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(1.5rem, 3vw, 3rem); margin-top: clamp(2.5rem, 5vw, 4rem); }
+.honours li { border-top: 2px solid var(--plum); padding-top: 1rem; color: var(--muted); }
+.honours__year { font: 700 0.8rem var(--f-label); letter-spacing: 0.18em; text-transform: uppercase; color: var(--plum); margin-bottom: 0.5rem; }
+@media (max-width: 900px) {
+  .ranks { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .rank:nth-child(3) { border-left: 0; }
+  .rank:nth-child(n + 3) { border-top: 1px solid var(--border); }
+  .honours { grid-template-columns: 1fr; }
+}
 
 /* Committee: rows are centred so groups read as 1 / 2 / 3 and 3 / 2 / 3 */
 .committee-group + .committee-group { margin-top: clamp(3.5rem, 7vw, 5.5rem); }
@@ -710,19 +740,16 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
    Footer — full width, edge to edge
    ========================================================================== */
 .site-footer { position: relative; margin-top: clamp(4rem, 8vw, 7rem); }
-body[data-page="home"] .site-footer { margin-top: calc(-1 * clamp(40px, 5vw, 80px)); }
+body[data-page="home"] .site-footer { margin-top: -24px; }
 .site-footer__skyline { position: relative; z-index: 2; display: flex; justify-content: center; pointer-events: none; }
-.site-footer__skyline img { width: min(1320px, 96vw); height: auto; margin-bottom: -2px; }
+.site-footer__skyline img { width: min(1000px, 92vw); height: auto; display: block; }
 .site-footer__body {
   position: relative; isolation: isolate; overflow: hidden;
   padding: clamp(3rem, 6vw, 5rem) var(--gutter) 1.5rem;
   background: linear-gradient(180deg, var(--plum-deep), var(--plum-ink));
   color: #e9dfeb;
 }
-.site-footer__body::before {
-  content: ""; position: absolute; inset: 0; z-index: -1; opacity: 0.07;
-  background: url("../assets/images/paisley.svg") 0 0 / 220px repeat; filter: brightness(4);
-}
+.site-footer__body { --paisley-ink: #c9dbf4; --paisley-alpha: 0.07; }
 .site-footer__top { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 2.5rem clamp(2rem, 5vw, 5rem); }
 .site-footer__brand { display: flex; gap: 1.25rem; align-items: flex-start; max-width: 28rem; }
 .site-footer__brand img { width: 64px; height: auto; padding: 0.55rem; background: #fff; border-radius: 16px; }

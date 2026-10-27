@@ -31,10 +31,6 @@
   /* ---------- Hero: intro, pointer depth, scroll depth ---------- */
   const hero = document.querySelector("[data-hero]");
   if (hero) {
-    const lines = $$(".kolam__line", hero);
-    const dots = $$(".kolam__dot", hero);
-    gsap.set(lines, { strokeDasharray: 1, strokeDashoffset: 1 });
-
     const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
     tl.from(".lockup__year span", { yPercent: -140, opacity: 0, stagger: 0.09, duration: 0.9, ease: "back.out(1.7)" })
       .from(".lockup__hci", { xPercent: -18, opacity: 0, duration: 0.9 }, 0.15)
@@ -42,10 +38,8 @@
       .from(".lockup__date", { x: -24, opacity: 0, duration: 0.7 }, 0.5)
       .from(".lockup__sym", { letterSpacing: "0.45em", opacity: 0, duration: 1.3, ease: "expo.out" }, 0.45)
       .from(".lockup__o .sparkle", { scale: 0, rotation: -180, duration: 1, ease: "back.out(2)" }, 1)
-      .from("[data-hero-in]", { y: 26, opacity: 0, stagger: 0.08, duration: 0.8 }, 0.6)
-      .from(".hero__skyline", { yPercent: 40, opacity: 0, duration: 1.4 }, 0.4)
-      .to(lines, { strokeDashoffset: 0, duration: 1.6, stagger: 0.025, ease: "power1.inOut" }, 0.5)
-      .from(dots, { scale: 0, transformOrigin: "50% 50%", stagger: 0.015, duration: 0.4 }, 1.2);
+      .from("[data-hero-in]", { y: 26, opacity: 0, stagger: 0.08, duration: 0.8 }, 0.6);
+    // Kolam corners and the skyline stay still on purpose.
 
     // Twinkle
     gsap.to(".lockup__o .sparkle", { rotation: 90, scale: 1.15, duration: 2.4, ease: "sine.inOut", yoyo: true, repeat: -1, delay: 2 });
@@ -82,20 +76,8 @@
     // Scroll depth: layers leave at different speeds.
     const scrub = { trigger: hero, start: "top top", end: "bottom top", scrub: true };
     gsap.to(".hero__inner", { yPercent: -22, opacity: 0.15, ease: "none", scrollTrigger: scrub });
-    gsap.to(".hero__skyline", { yPercent: -45, ease: "none", scrollTrigger: scrub });
-    gsap.to(".hero__bg", { yPercent: 18, ease: "none", scrollTrigger: scrub });
-    gsap.to(".hero__kolam--l", { xPercent: -30, yPercent: -20, ease: "none", scrollTrigger: scrub });
-    gsap.to(".hero__kolam--r", { xPercent: 30, yPercent: -20, ease: "none", scrollTrigger: scrub });
     gsap.to(".hero__badges", { yPercent: -60, opacity: 0, ease: "none", scrollTrigger: scrub });
   }
-
-  /* ---------- Page-head kolams draw themselves too ---------- */
-  $$(".page-head [data-kolam]").forEach((k) => {
-    const lines = $$(".kolam__line", k);
-    gsap.set(lines, { strokeDasharray: 1, strokeDashoffset: 1 });
-    gsap.to(lines, { strokeDashoffset: 0, duration: 1.6, stagger: 0.03, ease: "power1.inOut", delay: 0.2 });
-    gsap.from($$(".kolam__dot", k), { scale: 0, transformOrigin: "50% 50%", stagger: 0.015, duration: 0.4, delay: 0.9 });
-  });
 
   /* ---------- Headings: words rise from below ---------- */
   $$("[data-split]").forEach((el) => {
@@ -192,13 +174,13 @@
     const mm = gsap.matchMedia();
 
     // Wide screens: the road runs sideways while the section is pinned.
-    mm.add("(min-width: 960px)", () => {
+    mm.add("(min-width: 1024px) and (min-height: 760px)", () => {
       roadmap.classList.add("roadmap--h");
       const svg = document.createElementNS(NS, "svg");
       svg.classList.add("road");
       svg.setAttribute("aria-hidden", "true");
       track.prepend(svg);
-      let drawA, drawB, width = 0;
+      let drawA, drawB, width = 0, pts = [];
 
       const build = () => {
         width = track.scrollWidth;
@@ -209,7 +191,7 @@
         svg.style.width = `${width}px`;
         svg.style.height = `${h}px`;
 
-        const pts = stops.map((s, i) => ({ x: s.offsetLeft + s.offsetWidth / 2, split: modes[i] === "split" }));
+        pts = stops.map((s, i) => ({ x: s.offsetLeft + s.offsetWidth / 2, split: modes[i] === "split" }));
         const path = (sign) => {
           const y = (p) => (p.split ? c + sign * lane : c);
           let d = `M0 ${y(pts[0])} L${pts[0].x} ${y(pts[0])}`;
@@ -222,7 +204,7 @@
               d += ` C${m} ${y(a)} ${m} ${y(b)} ${b.x} ${y(b)}`;
             }
           }
-          return d + ` L${width} ${y(pts[pts.length - 1])}`;
+          return d; // the road ends at the last stop
         };
         const dA = path(-1);
         const dB = path(1);
@@ -238,7 +220,8 @@
       const update = () => {
         const x = -gsap.getProperty(track, "x");
         const head = x + window.innerWidth * 0.62; // where the road is "drawn" up to
-        const p = Math.min(1, head / width);
+        const end = pts.length ? pts[pts.length - 1].x : width;
+        const p = Math.min(1, head / end);
         if (drawA) {
           drawA.style.strokeDashoffset = 1 - p;
           drawB.style.strokeDashoffset = 1 - p;
@@ -279,7 +262,7 @@
     });
 
     // Narrow screens: a vertical rail that fills as you scroll.
-    mm.add("(max-width: 959px)", () => {
+    mm.add("(max-width: 1023px), (max-height: 759px)", () => {
       const fill = ScrollTrigger.create({
         trigger: track,
         start: "top 70%",
@@ -300,15 +283,6 @@
   }
 
   /* ---------- Footer ---------- */
-  const skyline = document.querySelector("[data-skyline]");
-  if (skyline) {
-    gsap.from(skyline, {
-      yPercent: 30,
-      opacity: 0.4,
-      ease: "none",
-      scrollTrigger: { trigger: skyline, start: "top bottom", end: "bottom 85%", scrub: true },
-    });
-  }
   const giant = document.querySelector(".site-footer__giant");
   if (giant) {
     gsap.from(giant, {
