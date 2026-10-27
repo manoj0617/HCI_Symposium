@@ -149,6 +149,10 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 }
 .nav { display: flex; align-items: center; justify-content: space-between; min-height: var(--header-h); gap: 1rem; padding-inline: var(--gutter); }
 .nav__menu { margin-left: auto; }
+.nav__brands { display: flex; align-items: center; gap: clamp(0.75rem, 1.6vw, 1.25rem); }
+.nav__host { display: flex; padding-left: clamp(0.75rem, 1.6vw, 1.25rem); border-left: 1px solid var(--border); }
+.nav__host img { height: 44px; width: auto; }
+@media (max-width: 400px) { .nav__host img { height: 36px; } .nav__brand-text { font-size: 0.9rem; } }
 .nav__brand { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; color: var(--ink); }
 .nav__brand img { height: 46px; width: auto; }
 .nav__brand-text { font: 1.05rem/1 var(--f-sym); letter-spacing: 0.14em; text-transform: uppercase; display: grid; gap: 0.2rem; }
@@ -236,14 +240,7 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .hero__glow--a { width: 46vw; height: 46vw; left: -12vw; top: -14vw; background: rgb(106 71 103 / 0.16); }
 .hero__glow--b { width: 40vw; height: 40vw; right: -10vw; top: 18vh; background: rgb(120 160 215 / 0.22); }
 
-.hero__badges { display: flex; justify-content: flex-end; align-items: center; gap: clamp(0.6rem, 1.6vw, 1.4rem); }
-.hero__badges img { height: clamp(40px, 4.4vw, 62px); width: auto; }
 
-.naac { display: grid; line-height: 0.95; font-family: var(--f-label); color: #3a3a3a; }
-.naac__name { font-weight: 800; font-size: clamp(0.95rem, 1.6vw, 1.55rem); letter-spacing: 0.12em; }
-.naac__grade { font-weight: 800; font-size: clamp(0.95rem, 1.6vw, 1.55rem); letter-spacing: 0.08em; }
-.naac__grade b { color: var(--red); font-size: 1.35em; letter-spacing: 0; }
-.naac__sub { font: 500 clamp(0.6rem, 0.8vw, 0.78rem) var(--f-body); margin-top: 0.15rem; }
 
 .hero__inner {
   flex: 1; display: grid; grid-template-columns: auto minmax(0, 1fr);
@@ -307,14 +304,11 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 
 @media (max-width: 900px) {
   .hero { --n: clamp(2.4rem, 10.5vw, 5.4rem); }
-  .hero__badges { justify-content: center; }
-  .hero__inner { grid-template-columns: 1fr; justify-items: center; text-align: center; padding-bottom: clamp(90px, 24vw, 200px); }
+    .hero__inner { grid-template-columns: 1fr; justify-items: center; text-align: center; padding-bottom: clamp(90px, 24vw, 200px); }
 }
 @media (max-width: 560px) {
   .hero { --n: 12.4vw; --kolam: 56px; padding-top: calc(var(--header-h) + 0.25rem); }
-  .hero__badges img { height: 36px; }
-  .naac__name, .naac__grade { font-size: 0.92rem; }
-  .hero__inner { gap: 1.75rem; padding-top: 1.25rem; align-content: center; }
+    .hero__inner { gap: 1.75rem; padding-top: 1.25rem; align-content: center; }
   .lockup { gap: calc(var(--n) * 0.12); }
   .lockup__row { flex-direction: column-reverse; align-items: flex-start; gap: calc(var(--n) * 0.08); }
   .lockup__date { grid-auto-flow: column; align-items: baseline; gap: 0.4em; }

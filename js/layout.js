@@ -48,10 +48,15 @@ const ART = (function () {
   <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header" data-header>
     <nav class="nav" aria-label="Main">
-      <a class="nav__brand" href="index.html" aria-label="HCIPAI Symposium 2027 — Home">
-        <img src="assets/logos/hcipai.png" alt="" width="40" height="57">
-        <span class="nav__brand-text">Symposium<b>2027</b></span>
-      </a>
+      <div class="nav__brands">
+        <a class="nav__brand" href="index.html" aria-label="HCIPAI Symposium 2027 — Home">
+          <img src="assets/logos/hcipai.png" alt="" width="40" height="57">
+          <span class="nav__brand-text">Symposium<b>2027</b></span>
+        </a>
+        <a class="nav__host" href="about-gcet.html" aria-label="Hosted by Geethanjali College of Engineering and Technology">
+          <img src="assets/logos/gcet.png" alt="" width="44" height="45">
+        </a>
+      </div>
 
       <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="nav-menu">
         <span class="sr-only">Menu</span>

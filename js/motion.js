@@ -76,7 +76,6 @@
     // Scroll depth: layers leave at different speeds.
     const scrub = { trigger: hero, start: "top top", end: "bottom top", scrub: true };
     gsap.to(".hero__inner", { yPercent: -22, opacity: 0.15, ease: "none", scrollTrigger: scrub });
-    gsap.to(".hero__badges", { yPercent: -60, opacity: 0, ease: "none", scrollTrigger: scrub });
   }
 
   /* ---------- Headings: words rise from below ---------- */
