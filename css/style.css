@@ -360,12 +360,6 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   mask: url("../assets/images/paisley.png") 0 0 / var(--paisley-size) repeat, linear-gradient(transparent, #000 14%, #000 86%, transparent);
   mask-composite: intersect;
 }
-.section--pattern::after {
-  content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none;
-  background:
-    radial-gradient(45% 55% at 8% 15%, rgb(120 160 215 / 0.2), transparent 70%),
-    radial-gradient(40% 45% at 92% 60%, rgb(106 71 103 / 0.12), transparent 70%);
-}
 .section--flush { padding-bottom: 0; }
 
 .head { text-align: center; max-width: 780px; margin: 0 auto clamp(2.5rem, 5vw, 4rem); }
@@ -639,7 +633,7 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 }
 .page-head::after {
   content: ""; position: absolute; inset: 0; z-index: -1;
-  background: radial-gradient(50% 60% at 20% 10%, rgb(106 71 103 / 0.14), transparent 70%), radial-gradient(40% 60% at 85% 30%, rgb(120 160 215 / 0.2), transparent 70%);
+  background: radial-gradient(50% 60% at 20% 10%, rgb(106 71 103 / 0.1), transparent 70%);
 }
 .page-head h1 { font: clamp(2.8rem, 7vw, 5.6rem) / 1 var(--f-sym); letter-spacing: -0.01em; }
 .page-head p:not(.eyebrow) { margin: 1.1rem auto 0; max-width: 640px; color: var(--muted); font-size: 1.1rem; }
