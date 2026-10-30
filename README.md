@@ -22,14 +22,16 @@ Almost all content lives in **`js/data.js`**:
 | Pass prices, early-bird deadline, GST note, perks | `pricing` |
 | Scrolling strip under the banner | `marquee` |
 | "What's on" cards, workshop tracks | `experiences`, `tracks` |
-| Day 1 / Day 2 programme (roadmap) | `schedule` |
+| Day 1 / Day 2 programme (roadmap), lanes, all-day strip | `schedule`, `lanes`, `allDay` |
+| Faculty workshop registration form | `workshop.registerUrl` |
 | Speakers, workshop facilitators (`announced: true` shows the cards) | `speakers` |
 | Organising committee (`committeeAnnounced: true` shows the cards) | `committee` |
 | Venue, contact email, social links | `venue`, `contact` |
 
 - **Early bird:** `pricing.earlyBirdEnds` (currently `2027-01-31`). Cards switch to regular prices after that day (IST).
-- **Programme:** each stop has a `kind`. `split` = different session per track (the road forks), `parallel` = same
-  session in both tracks, `pause` = lunch. Tea breaks are left out on purpose.
+- **Programme:** each stop has a `kind`. `split` = the road forks into lane A (educators & experts) and lane B
+  (students); each lane lists one or more sessions, and a `link` makes a card jump to its section. `pause` = lunch.
+  Tea breaks are left out on purpose.
 - **Committee rows:** `rows: [3, 2, 3]` lays cards out 3 / 2 / 3, `[1]`, `[2]`, `[3]` build a 1 / 2 / 3 pyramid.
 - **Photos:** speakers/committee `photo: "assets/images/…"` (square, ≥ 400×400); `""` shows a placeholder.
 - **Campus carousel:** slides are `<img>` tags in `about-gcet.html`, files in `assets/images/campus/`
@@ -57,6 +59,11 @@ assets/             Logos, skyline, paisley tile (from Canva page 15), draft ban
 ```
 
 ## Pending from organisers / design team
+
+- [ ] Student Design Competition details (section `#competition` in `index.html`)
+- [ ] Workshop form: confirm the public link (site uses `/viewform`; the link shared was the `/edit` one)
+- [ ] Workshop I / II topics for students (the "Pick your track" section still shows UI/UX and VR tracks)
+- [ ] Names and roles for each speaker/committee photo
 
 - [ ] HD Charminar (Canva page 13) — the one in the skyline is enlarged from the draft banner, so slightly soft
 - [ ] About GCET: AR/VR Lab description

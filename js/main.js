@@ -85,6 +85,8 @@
     el.innerHTML = `<div class="marquee__track"><div class="marquee__run">${run}</div><div class="marquee__run">${run}</div></div>`;
   });
 
+  document.querySelectorAll("[data-workshop-register]").forEach((a) => (a.href = SITE.workshop.registerUrl));
+
   /* ---------- Icons (inline, stroke-based) ---------- */
   const icon = {
     Talks: '<path d="M12 3a3 3 0 0 1 3 3v5a3 3 0 0 1-6 0V6a3 3 0 0 1 3-3Z"/><path d="M5.5 11a6.5 6.5 0 0 0 13 0M12 17.5V21M8.5 21h7"/>',
@@ -169,8 +171,16 @@
   /* ---------- Programme roadmap ---------- */
   const roadEl = $("roadmap");
   if (roadEl) {
-    const kindLabel = { talk: "Talk", expo: "Expo", parallel: "Both tracks" };
-    const lane = (id) => SITE.tracks.find((t) => t.id === id);
+    const kindLabel = { talk: "Talk", expo: "Expo" };
+    const laneCards = (items, which) =>
+      `<div class="stop__lane stop__lane--${which}">${items
+        .map(
+          (x) => `<${x.link ? `a href="${esc(x.link)}"` : "div"} class="stop__card stop__card--${which}" data-tilt>
+            <p class="stop__tag">${esc(x.tag)}</p>
+            <h3 class="stop__title">${esc(x.title)}</h3>
+          </${x.link ? "a" : "div"}>`
+        )
+        .join("")}</div>`;
     let side = 0;
 
     const stopHtml = (s) => {
@@ -185,16 +195,8 @@
           <span class="stop__node stop__node--a" aria-hidden="true"></span>
           <span class="stop__node stop__node--b" aria-hidden="true"></span>
           <p class="stop__time"><time>${esc(s.time)}</time></p>
-          <div class="stop__card stop__card--a" data-tilt>
-            <p class="stop__tag">Track A · ${esc(lane("A").name)}</p>
-            <h3 class="stop__title">${esc(s.title)}</h3>
-            <p class="stop__topic">${esc(s.a)}</p>
-          </div>
-          <div class="stop__card stop__card--b" data-tilt>
-            <p class="stop__tag">Track B · ${esc(lane("B").name)}</p>
-            <h3 class="stop__title">${esc(s.title)}</h3>
-            <p class="stop__topic">${esc(s.b)}</p>
-          </div>
+          ${laneCards(s.a, "a")}
+          ${laneCards(s.b, "b")}
         </li>`;
       }
       const dir = side++ % 2 === 0 ? "up" : "down";
@@ -232,8 +234,9 @@
         <div class="roadmap__days" role="group" aria-label="Jump to day">
           ${SITE.schedule.map((d, i) => `<button type="button" class="chip" data-jump="${i}" aria-pressed="${i === 0}">${esc(d.day)} <span>${esc(d.date)}</span></button>`).join("")}
         </div>
-        <p class="roadmap__legend" aria-hidden="true"><span class="lg-item"><span class="lg lg--a"></span>Track A · ${esc(lane("A").name)}</span><span class="lg-item"><span class="lg lg--b"></span>Track B · ${esc(lane("B").name)}</span></p>
+        <p class="roadmap__legend" aria-hidden="true"><span class="lg-item"><span class="lg lg--a"></span>${esc(SITE.lanes.A.name)}</span><span class="lg-item"><span class="lg lg--b"></span>${esc(SITE.lanes.B.name)}</span></p>
       </div>
+      <p class="roadmap__allday wrap"><b>All day</b><span>${SITE.allDay.map(esc).join(" · ")}</span></p>
       <div class="roadmap__viewport">
         <ol class="roadmap__track">
           ${days}

@@ -44,24 +44,24 @@ const SITE = {
   },
 
   // Scrolling strip under the banner.
-  marquee: ["One Experience. Many Perspectives.", "18–19 March 2027", "Design it. Build it. Step inside it.", "GCET, Hyderabad", "Two tracks · UI/UX & HCI · VR & Immersive", "Early bird till 31 January"],
+  marquee: ["One Experience. Many Perspectives.", "18–19 March 2027", "Design it. Build it. Step inside it.", "GCET, Hyderabad", "Posters · Demos · Installations", "Early bird till 31 January"],
 
   // The three things people come for. Shown on the home page.
   experiences: [
     {
       title: "Talks",
-      kicker: "Keynotes & expert talk",
-      text: "Day one opens with two keynotes and an expert talk on where interaction, interface and immersive design are heading.",
+      kicker: "Keynotes, expert talks & a panel",
+      text: "Two keynotes, four expert talks and a panel discussion on where interaction, interface and immersive design are heading.",
     },
     {
       title: "Workshops",
-      kicker: "Two tracks, two days",
-      text: "Pick a track and spend your afternoons building, testing and breaking prototypes with the people who facilitate them.",
+      kicker: "Students, educators & experts",
+      text: "Hands-on workshops for students, and a participatory workshop where educators shape how HCI enters engineering curricula.",
     },
     {
       title: "Expo",
-      kicker: "Stalls & live demos",
-      text: "Projects, prototypes and stalls you can walk up to, try out and question. Open on both evenings.",
+      kicker: "Posters, demos & installations",
+      text: "Posters, live demos and installations you can walk up to, try out and question. Open all day on both days.",
     },
   ],
 
@@ -81,54 +81,87 @@ const SITE = {
     },
   ],
 
-  // Roadmap. Breaks are left out on purpose.
-  // kind: common | talk | split (different session per track) | parallel (same session in both tracks) | pause | expo
+  // Who each workshop lane is for. Lane A runs above the road, lane B below it.
+  lanes: {
+    A: { name: "Educators & experts" },
+    B: { name: "Students" },
+  },
+  // Runs alongside the whole programme on both days.
+  allDay: ["Posters", "Demos", "Installations"],
+
+  // Programme, from the organisers' sheet (tentative). Tea breaks are left out on purpose.
+  // kind: common | talk | split (different sessions per lane) | pause
+  // A split stop lists its sessions per lane: a: [...] and b: [...]; tag says who it is for.
   schedule: [
     {
       day: "Day 1",
       date: "Thu, 18 March",
-      theme: "HCI, Design & Immersive Experiences",
+      theme: "Talks, then hands-on workshops",
       stops: [
-        { time: "9:00 – 9:30 AM", title: "Registration & Welcome", kind: "common" },
-        { time: "9:30 – 10:00 AM", title: "Inauguration & Opening Address", kind: "common" },
-        { time: "10:00 – 10:45 AM", title: "Keynote Address I", topic: "HCI and the Future of Human–Technology Interaction", kind: "talk" },
-        { time: "11:00 – 11:45 AM", title: "Keynote Address II", topic: "Designing Interactive & Immersive Experiences", kind: "talk" },
-        { time: "11:45 AM – 12:30 PM", title: "Expert Talk", topic: "Emerging Trends in HCI, UI/UX & Immersive Technologies", kind: "talk" },
-        { time: "12:30 – 1:30 PM", title: "Lunch", kind: "pause" },
-        { time: "1:30 – 3:00 PM", title: "Workshop Session", kind: "split", a: "UI/UX & HCI", b: "VR & Immersive Technologies" },
-        { time: "3:15 – 5:00 PM", title: "Workshop Session", kind: "split", a: "UI/UX & HCI", b: "VR & Immersive Technologies" },
-        // Overlaps the 3:15–5:00 workshop on purpose (confirmed by organisers).
-        { time: "4:00 – 5:30 PM", title: "Networking & Stall Exploration", topic: "Exhibition, demonstrations and informal conversations", kind: "expo" },
+        { time: "9:00–9:30", title: "Registration & Welcome", kind: "common" },
+        { time: "9:30–10:30", title: "Inauguration & Opening Address", kind: "common" },
+        { time: "10:30–11:15", title: "Keynote I", kind: "talk" },
+        { time: "11:30–12:00", title: "Expert Talk I", kind: "talk" },
+        { time: "12:00–12:30", title: "Expert Talk II", kind: "talk" },
+        { time: "12:30–14:00", title: "Lunch", kind: "pause" },
+        {
+          time: "14:00–15:15",
+          kind: "split",
+          a: [{ title: "Integrating HCI/HMI Design with Engineering Curricula", tag: "Participatory workshop", link: "#workshop" }],
+          b: [{ title: "Workshop I", tag: "Students" }, { title: "Workshop II", tag: "Students" }],
+        },
+        {
+          time: "15:30–16:45",
+          kind: "split",
+          a: [{ title: "Integrating HCI/HMI Design with Engineering Curricula", tag: "Participatory workshop", link: "#workshop" }],
+          b: [{ title: "Workshop I", tag: "Students" }, { title: "Workshop II", tag: "Students" }],
+        },
+        { time: "16:45–17:30", title: "High Tea & Networking", kind: "common" },
       ],
     },
     {
       day: "Day 2",
       date: "Fri, 19 March",
-      theme: "Hands-on HCI & Immersive Development",
+      theme: "Conversations, workshops and the competition",
       stops: [
-        { time: "9:00 – 9:15 AM", title: "Workshop Orientation", kind: "parallel" },
-        { time: "9:15 – 11:00 AM", title: "Panel Discussion", kind: "parallel" },
-        { time: "11:15 AM – 12:30 PM", title: "Interactive Session", kind: "parallel" },
-        { time: "12:30 – 1:30 PM", title: "Lunch", kind: "pause" },
-        { time: "1:30 – 3:00 PM", title: "Workshop", kind: "parallel" },
-        { time: "3:15 – 5:00 PM", title: "Prototype Demonstrations & Wrap-up", kind: "parallel" },
-        { time: "5:00 – 5:30 PM", title: "Networking & Stall Exploration", kind: "expo" },
+        { time: "9:00–9:30", title: "Registration & Welcome", kind: "common" },
+        { time: "9:30–10:15", title: "Keynote II", kind: "talk" },
+        { time: "10:15–10:45", title: "Expert Talk III", kind: "talk" },
+        { time: "10:45–11:15", title: "Expert Talk IV", kind: "talk" },
+        { time: "11:30–12:00", title: "Interactive Session", kind: "common" },
+        { time: "12:00–13:00", title: "Panel Discussion", kind: "common" },
+        { time: "13:00–14:00", title: "Lunch", kind: "pause" },
+        {
+          time: "14:00–15:15",
+          kind: "split",
+          a: [{ title: "Workshop III", tag: "Educators & experts" }],
+          b: [{ title: "Student Design Competition Jury", tag: "Competition", link: "#competition" }],
+        },
+        {
+          time: "15:30–16:45",
+          kind: "split",
+          a: [{ title: "Workshop IV", tag: "Educators & experts" }],
+          b: [{ title: "Student Design Competition Jury", tag: "Competition", link: "#competition" }],
+        },
+        { time: "16:45–17:30", title: "Closing", kind: "common" },
       ],
     },
   ],
 
-  // TODO: names, photos. photo: "assets/images/speakers/name.jpg" (square, ≥ 400×400), or "" for a placeholder.
+  // Faculty workshop (details from the organisers' brief).
+  workshop: {
+    registerUrl: "https://docs.google.com/forms/d/1SiDkbFK1MY2DsGMlJ2VOxW2bPfllSGE7McmOGQfsZdw/viewform",
+  },
+
   // Set announced: true once names are in, to show speaker cards instead of "To be announced".
   speakers: {
     announced: false,
     keynote: [
-      { name: "To be announced", session: "Keynote I", topic: "HCI and the Future of Human–Technology Interaction", photo: "" },
-      { name: "To be announced", session: "Keynote II", topic: "Designing Interactive & Immersive Experiences", photo: "" },
-      { name: "To be announced", session: "Expert Talk", topic: "Emerging Trends in HCI, UI/UX & Immersive Technologies", photo: "" },
+      { name: "To be announced", session: "Keynote I", topic: "Day 1", photo: "" },
+      { name: "To be announced", session: "Keynote II", topic: "Day 2", photo: "" },
     ],
     workshop: [
-      { name: "To be announced", session: "Track A", topic: "UI/UX & HCI workshop", photo: "" },
-      { name: "To be announced", session: "Track B", topic: "VR & Immersive workshop", photo: "" },
+      { name: "To be announced", session: "Expert Talks I–IV", topic: "Days 1 & 2", photo: "" },
     ],
   },
 
