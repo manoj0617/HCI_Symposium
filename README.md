@@ -24,8 +24,8 @@ Almost all content lives in **`js/data.js`**:
 | "What's on" cards, workshop tracks | `experiences`, `tracks` |
 | Day 1 / Day 2 programme (roadmap), lanes, all-day strip | `schedule`, `lanes`, `allDay` |
 | Faculty workshop registration form | `workshop.registerUrl` |
-| Speakers, workshop facilitators (`announced: true` shows the cards) | `speakers` |
-| Organising committee (`committeeAnnounced: true` shows the cards) | `committee` |
+| Speakers (`list`; `moreToCome` shows "More speakers to be announced") | `speakers` |
+| Organising committee (groups, roles, photos, row pattern) | `committee` |
 | Venue, contact email, social links | `venue`, `contact` |
 
 - **Early bird:** `pricing.earlyBirdEnds` (currently `2027-01-31`). Cards switch to regular prices after that day (IST).
@@ -63,7 +63,7 @@ assets/             Logos, skyline, paisley tile (from Canva page 15), draft ban
 - [ ] Student Design Competition details (section `#competition` in `index.html`)
 - [ ] Workshop form: confirm the public link (site uses `/viewform`; the link shared was the `/edit` one)
 - [ ] Workshop I / II topics for students (the "Pick your track" section still shows UI/UX and VR tracks)
-- [ ] Names and roles for each speaker/committee photo
+- [ ] Which keynote (I or II) Rabindra Sah gives; the other keynote and Expert Talks I–IV speakers
 
 - [ ] HD Charminar (Canva page 13) — the one in the skyline is enlarged from the draft banner, so slightly soft
 - [ ] About GCET: AR/VR Lab description

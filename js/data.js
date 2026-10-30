@@ -153,44 +153,48 @@ const SITE = {
     registerUrl: "https://docs.google.com/forms/d/1SiDkbFK1MY2DsGMlJ2VOxW2bPfllSGE7McmOGQfsZdw/viewform",
   },
 
-  // Set announced: true once names are in, to show speaker cards instead of "To be announced".
+  // Confirmed speakers. Add more as they are announced; "more to be announced" shows while moreToCome is true.
+  // photo: square image in assets/images/people/.
   speakers: {
-    announced: false,
-    keynote: [
-      { name: "To be announced", session: "Keynote I", topic: "Day 1", photo: "" },
-      { name: "To be announced", session: "Keynote II", topic: "Day 2", photo: "" },
-    ],
-    workshop: [
-      { name: "To be announced", session: "Expert Talks I–IV", topic: "Days 1 & 2", photo: "" },
+    moreToCome: true,
+    list: [
+      {
+        name: "Rabindra Sah",
+        session: "Keynote Speaker",
+        designation: "Chief Technology Officer & Senior Vice President",
+        org: "Indian Register of Shipping",
+        photo: "assets/images/people/photo-01.jpg",
+      },
     ],
   },
 
-  // TODO: placeholder committee. `rows` sets how many cards go on each line,
-  // e.g. [1] → 1, [2] → 2, [3, 2, 3] → 3 / 2 / 3. Leave it out to fill rows of 3.
-  committeeAnnounced: false, // true = show the member cards below instead of "To be announced"
+  // Organising committee. `rows` sets how many cards go on each line (always centred).
+  committeeAnnounced: true,
   committee: [
-    { group: "Chief Patron", rows: [1], members: [{ name: "Member Name", role: "Role / Designation", photo: "" }] },
     {
-      group: "Patrons",
+      group: "General Chairs",
       rows: [2],
       members: [
-        { name: "Member Name", role: "Role / Designation", photo: "" },
-        { name: "Member Name", role: "Role / Designation", photo: "" },
+        { name: "Dr. Udaya Kumar Susarla", role: "General Chair", photo: "assets/images/people/photo-04.jpg" },
+        { name: "Mr. R. Harishchandra Reddy", role: "General Chair", photo: "assets/images/people/photo-05.jpg" },
       ],
     },
     {
-      group: "Convenors",
+      group: "Program Chairs",
       rows: [3],
       members: [
-        { name: "Member Name", role: "Role / Designation", photo: "" },
-        { name: "Member Name", role: "Role / Designation", photo: "" },
-        { name: "Member Name", role: "Role / Designation", photo: "" },
+        { name: "Dr. D. Sujatha", role: "Program Chair", photo: "assets/images/people/photo-03.jpg" },
+        { name: "Dr. V. Madhusudan Rao", role: "Program Chair", photo: "assets/images/people/photo-06.jpg" },
+        { name: "MD Akif", role: "Program Chair", photo: "assets/images/people/photo-02.jpg" },
       ],
     },
     {
-      group: "Organising Committee",
-      rows: [3, 2, 3],
-      members: Array.from({ length: 8 }, () => ({ name: "Member Name", role: "Role / Designation", photo: "" })),
+      group: "Registration & Outreach",
+      rows: [2],
+      members: [
+        { name: "Mrs. A. Jayasree", role: "Registration Chair", photo: "assets/images/people/photo-08.jpg" },
+        { name: "Dr. Bhanu Mahesh", role: "Website & Outreach Chair", photo: "assets/images/people/photo-07.jpg" },
+      ],
     },
   ],
 

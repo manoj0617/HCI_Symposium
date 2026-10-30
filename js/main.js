@@ -278,17 +278,18 @@
       ${avatar(p)}
       <p class="person__session">${esc(p.session)}</p>
       <h3 class="person__name">${esc(p.name)}</h3>
-      <p class="person__topic">${esc(p.topic)}</p>
+      ${p.designation ? `<p class="person__role">${esc(p.designation)}</p>` : ""}
+      ${p.org ? `<p class="person__topic">${esc(p.org)}</p>` : ""}
     </article>`;
 
   const tba = '<p class="tba" data-reveal>To be announced</p>';
 
   const speakersEl = $("speakers-list");
   if (speakersEl) {
-    speakersEl.innerHTML = SITE.speakers.announced
-      ? `<div class="people" data-stagger>${SITE.speakers.keynote.map(speakerCard).join("")}</div>
-         <h3 class="subhead" data-reveal>Workshop facilitators</h3>
-         <div class="people" data-stagger>${SITE.speakers.workshop.map(speakerCard).join("")}</div>`
+    const { list, moreToCome } = SITE.speakers;
+    speakersEl.innerHTML = list.length
+      ? `<div class="people" data-stagger>${list.map(speakerCard).join("")}</div>
+         ${moreToCome ? '<p class="tba tba--small" data-reveal>More speakers to be announced</p>' : ""}`
       : tba;
   }
 
