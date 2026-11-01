@@ -656,10 +656,10 @@ a.stop__card .stop__title::after { content: " →"; color: var(--plum); }
 .tba { text-align: center; font: clamp(1.8rem, 4vw, 3rem) / 1.2 var(--f-tag); color: var(--plum); }
 
 /* ---------- People (speakers) ---------- */
-.people { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 300px)); justify-content: center; gap: clamp(1rem, 2vw, 1.5rem); }
-.person { text-align: center; padding: 2rem 1.5rem; border-radius: var(--radius); }
+.people { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 340px)); justify-content: center; gap: clamp(1rem, 2vw, 1.5rem); }
+.person { text-align: center; padding: 2.25rem 1.75rem; border-radius: var(--radius); }
 .avatar {
-  width: 120px; height: 120px; margin: 0 auto 1.2rem; border-radius: 50%; object-fit: cover;
+  width: 160px; height: 160px; margin: 0 auto 1.2rem; border-radius: 50%; object-fit: cover;
   border: 4px solid #fff; box-shadow: 0 0 0 2px var(--blue), 0 14px 30px -14px rgb(61 39 64 / 0.6);
 }
 .avatar--blank {
@@ -801,11 +801,11 @@ a.stop__card .stop__title::after { content: " →"; color: var(--plum); }
 .committee-group__title { font: clamp(1.7rem, 3.4vw, 2.4rem) var(--f-sym); text-align: center; margin-bottom: 1.75rem; }
 .committee-row { display: flex; flex-wrap: wrap; justify-content: center; gap: clamp(1rem, 2vw, 1.5rem); }
 .committee-row + .committee-row { margin-top: clamp(1rem, 2vw, 1.5rem); }
-.member { flex: 0 1 270px; text-align: center; padding: 1.75rem 1.25rem; border-radius: var(--radius); }
-.member .avatar { width: 104px; height: 104px; }
+.member { flex: 0 1 310px; text-align: center; padding: 2rem 1.5rem; border-radius: var(--radius); }
+.member .avatar { width: 144px; height: 144px; }
 .member__name { font: 1.35rem/1.2 var(--f-sym); }
 .member__role { color: var(--plum); font-size: 0.92rem; margin-top: 0.3rem; }
-@media (max-width: 640px) { .member { flex-basis: calc(50% - 0.5rem); padding: 1.25rem 0.75rem; } .member .avatar { width: 80px; height: 80px; } }
+@media (max-width: 640px) { .member { flex-basis: calc(50% - 0.5rem); padding: 1.25rem 0.75rem; } .member .avatar { width: 104px; height: 104px; } }
 
 /* Contact */
 .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: clamp(1rem, 2vw, 1.5rem); }
