@@ -40,6 +40,8 @@ const ART = (function () {
       <ul class="nav__menu" id="nav-menu">
         <li><a class="nav__link" href="index.html"${current("home")}>Home</a></li>
         <li><a class="nav__link" href="${home}#programme">Programme</a></li>
+        <li><a class="nav__link" href="${home}#workshop">Workshop</a></li>
+        <li><a class="nav__link" href="${home}#competition">Competition</a></li>
         <li class="nav__dropdown">
           <button class="nav__link nav__dropdown-btn${aboutActive}" type="button" aria-expanded="false" aria-controls="about-menu">
             About <span class="nav__caret" aria-hidden="true"></span>
@@ -78,6 +80,8 @@ const ART = (function () {
           <h2 class="site-footer__heading">Explore</h2>
           <ul class="site-footer__links">
             <li><a href="${home}#programme">Programme</a></li>
+            <li><a href="${home}#workshop">Faculty workshop</a></li>
+            <li><a href="${home}#competition">Student competition</a></li>
             <li><a href="${home}#passes">Passes</a></li>
             <li><a href="about-gcet.html">About GCET</a></li>
             <li><a href="committee.html">Organising Committee</a></li>
