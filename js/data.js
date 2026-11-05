@@ -196,6 +196,13 @@ const SITE = {
         { name: "Dr. Bhanu Mahesh", role: "Website & Outreach Chair", photo: "assets/images/people/photo-07.jpg" },
       ],
     },
+    {
+      group: "Social Media Team",
+      rows: [1],
+      members: [
+        { name: "Mr. Rahul Das", role: "Social Media Team", photo: "assets/images/people/rahul-das.jpg" },
+      ],
+    },
   ],
 
   // TODO: confirm all venue/contact details with organisers.
