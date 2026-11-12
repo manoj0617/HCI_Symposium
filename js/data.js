@@ -190,10 +190,18 @@ const SITE = {
     },
     {
       group: "Registration & Outreach",
-      rows: [2],
+      rows: [3],
       members: [
         { name: "Mrs. A. Jayasree", role: "Registration Chair", photo: "assets/images/people/photo-08.jpg" },
+        { name: "Mr. G. Srihari Babu", role: "Registration Chair", photo: "assets/images/people/g-srihari-babu.jpg" },
         { name: "Dr. Bhanu Mahesh", role: "Website & Outreach Chair", photo: "assets/images/people/photo-07.jpg" },
+      ],
+    },
+    {
+      group: "Social Media Team",
+      rows: [1],
+      members: [
+        { name: "Mr. Rahul Das", role: "Social Media Team", photo: "assets/images/people/rahul-das.jpg" },
       ],
     },
   ],
