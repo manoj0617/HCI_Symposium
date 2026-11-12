@@ -774,6 +774,10 @@ a.stop__card .stop__title::after { content: " →"; color: var(--plum); }
   font: 900 clamp(9rem, 16vw, 15rem) / 1 var(--f-wide); font-stretch: 150%;
   color: transparent; -webkit-text-stroke: 2px rgb(255 255 255 / 0.25);
 }
+.unit--xr > div { position: relative; z-index: 1; }
+.unit__projects { display: grid; gap: 0.5rem; margin-top: 1.25rem; padding-top: 1.1rem; border-top: 1px solid rgb(255 255 255 / 0.22); }
+.unit__projects li { display: flex; gap: 0.7rem; align-items: baseline; font: 1.15rem var(--f-sym); }
+.unit__projects li::before { content: ""; flex: none; width: 12px; height: 2px; background: #c9dbf4; transform: translateY(-0.3em); }
 .unit__links { position: relative; display: grid; gap: 0.4rem; font-size: 0.98rem; }
 .unit--xr a { color: #fff; }
 .placeholder-text { font-style: italic; opacity: 0.85; }
