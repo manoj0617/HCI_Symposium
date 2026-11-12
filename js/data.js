@@ -183,8 +183,8 @@ const SITE = {
       group: "Program Chairs",
       rows: [3],
       members: [
-        { name: "Dr. D. Sujatha", role: "Program Chair", photo: "assets/images/people/photo-03.jpg" },
         { name: "Dr. V. Madhusudan Rao", role: "Program Chair", photo: "assets/images/people/photo-06.jpg" },
+        { name: "Dr. D. Sujatha", role: "Program Chair", photo: "assets/images/people/photo-03.jpg" },
         { name: "MD Akif", role: "Program Chair", photo: "assets/images/people/photo-02.jpg" },
       ],
     },
