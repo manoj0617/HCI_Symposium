@@ -13,7 +13,7 @@ const SITE = {
     dates: "18–19 March 2027",
     startDate: "2027-03-18T09:00:00+05:30",
     venueShort: "GCET, Hyderabad",
-    registerUrl: "#", // TODO: registration link from HCI
+    registerUrl: "https://account.indiahci.org", // HCIPAI registration platform
   },
 
   pricing: {
