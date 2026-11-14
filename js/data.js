@@ -13,7 +13,10 @@ const SITE = {
     dates: "18–19 March 2027",
     startDate: "2027-03-18T09:00:00+05:30",
     venueShort: "GCET, Hyderabad",
-    registerUrl: "https://account.indiahci.org", // HCIPAI registration platform
+    // HCIPAI registration platform: visitors sign in, then register for "HCIPAI Symposium 2027" from the events list.
+    registerUrl: "https://account.indiahci.org/events",
+    registerCloses: "19 March 2027, 4:00 pm IST",
+    membershipUrl: "https://www.indiahci.org/hcipai-memberships/",
   },
 
   pricing: {

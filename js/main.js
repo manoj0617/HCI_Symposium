@@ -85,6 +85,8 @@
     el.innerHTML = `<div class="marquee__track"><div class="marquee__run">${run}</div><div class="marquee__run">${run}</div></div>`;
   });
 
+  document.querySelectorAll("[data-register-closes]").forEach((el) => (el.textContent = SITE.event.registerCloses));
+  document.querySelectorAll("[data-membership]").forEach((a) => (a.href = SITE.event.membershipUrl));
   document.querySelectorAll("[data-workshop-register]").forEach((a) => (a.href = SITE.workshop.registerUrl));
 
   /* ---------- Icons (inline, stroke-based) ---------- */
