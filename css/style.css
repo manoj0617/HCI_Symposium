@@ -454,6 +454,14 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .price--featured .price__sub { color: #eadfeb; }
 .price--featured .price__perks { border-color: rgb(255 255 255 / 0.22); }
 .price--featured .price__perks li::before { background: #c9dbf4; }
+.howto { max-width: 760px; margin: clamp(2.5rem, 5vw, 3.5rem) auto 0; padding: clamp(1.75rem, 3.5vw, 2.5rem); border-radius: var(--radius); }
+.howto__title { font: clamp(1.6rem, 3vw, 2.1rem) var(--f-sym); }
+.howto__steps { counter-reset: h; display: grid; gap: 0.9rem; margin-top: 1.25rem; }
+.howto__steps li { counter-increment: h; display: grid; grid-template-columns: 2.6rem 1fr; align-items: baseline; }
+.howto__steps li::before { content: counter(h); display: grid; place-items: center; width: 1.9rem; height: 1.9rem; border-radius: 50%; background: var(--plum); color: #fff; font: 700 0.9rem var(--f-label); }
+.howto__steps a, .howto__note a { font-weight: 600; }
+.howto__note { margin-top: 1.25rem; padding-top: 1rem; border-top: 1px solid var(--border); color: var(--muted); font-size: 0.95rem; }
+.howto__cta { margin-top: 1.5rem; }
 .pricing__note { margin-top: 1.75rem; text-align: center; color: var(--muted); font-size: 0.95rem; }
 
 /* ==========================================================================
